@@ -10,7 +10,7 @@ categories: jekyll update
 再看看图片呗～下面是一个美丽的桥的图片：
 ({{site.url}}/files/桥.jpg)
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 def show
   @widget = Widget(params[:id])
   respond_to do |format|
