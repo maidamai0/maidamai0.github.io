@@ -3,13 +3,14 @@ layout: post
 title:  "TEST"
 date:   2016-03-28 16:23:34 +0800
 categories: jekyll update
+
 ---
 
 这是第一篇博客，用来测试效果～
 
-试一试能不能下载PDF文件[ProGit(英文版)]
+试一试能不能下载PDF文件[ProGit(英文版)]({{site.url}}/downloads/progit.en.pdf)
 
-再看看图片呗～下面是一个美丽的桥的图片![picture]({{site.url}}/downloads/桥.jpg)
+再看看图片呗～下面是一个美丽的桥的图片![]({{site.url}}/downloads/桥.jpg)
 
 再看一段 `代码`的效果：
 
@@ -25,7 +26,17 @@ end
 
 最后，当然少不了要展示以下公式了！行内是这样的$a^2$，行间是这样的
 
-$$a^2+b^ = c^2$$
+$$a^2+b^2 = c^2$$
+
+#H1
+
+##H2
+
+###H3
+
+####H4
+
+
 
 引用一段文字
 >引用文字引用文字引用文字
@@ -57,9 +68,9 @@ $$a^2+b^ = c^2$$
 |2|130|4|520|
 
 
-jekyll的官方文档[jekyll英文网站]，[jekyll中文网站]，[jekyllbootstrap]
+jekyll的官方文档
+[jekyll英文网站]，[jekyll中文网站]，[jekyllbootstrap]
 
-[ProGit(英文版)]:{{site.url}}/downloads/progit.en.pdf
 [jekyll英文网站]:http://jekyllrb.com
 [jekyll中文网站]:http://jekyllcn.com
 [jekyllbootstrap]:http://jekyllbootstrap.com
