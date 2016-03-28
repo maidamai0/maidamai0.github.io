@@ -10,3 +10,13 @@ categories: jekyll update
 再看看图片呗～下面是一个美丽的桥的图片：
 ({{site.url}}/files/桥.jpg)
 
+{% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}
+
