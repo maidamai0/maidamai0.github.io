@@ -8,7 +8,7 @@
 # Site settings
 title: 袁同浩
 markdown: kramdown
-permalink: none
+permalink: /:title
 email: michael.19@163.com
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -17,7 +17,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.tonghao.tk" # the base hostname & protocol for your site
 twitter_username: haohao_jing
-github_username:  maidamai0
+github_username:  maidamai0/maidamai0.github.io
 
 # Build settings
 markdown: kramdown
