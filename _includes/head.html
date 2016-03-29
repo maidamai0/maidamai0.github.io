@@ -10,9 +10,14 @@
 	  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 	<style>
-		body{
-			background-color: linen;
-			background-image: url('{{site.url}}/downloads/background.jpg');
-		}
+		
+		body{background-color: linen;/*background-image: url('{{site.url}}/downloads/background.jpg');*/}
+		article{border-style: none none solid none;border-width:thin;}
+				
+		h1{border-style: none none solid none;border-width:thin;position:static;}
+		div.home{ border-style: none none solid none;border-width:thin; }
+		ul.psot-list{margin-left: inherit;}
+   		footer{width:100%;margin:auto;text-align:center;background-color:lightblue;margin-bottom:0px;height:10px;}
+		footer li{display:inline-block;list-style-type:none;padding:0px 40px;}
 	</style>
 </head>
