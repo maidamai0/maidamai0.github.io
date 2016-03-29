@@ -12,7 +12,7 @@
 	<style>
 		body{
 			background-color: linen;
-			background-image: url('{{site.url}}/dowloads/background.jpg');
+			background-image: url('{{site.url}}/downloads/background.jpg');
 		}
 	</style>
 </head>
