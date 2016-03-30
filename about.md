@@ -1,7 +1,0 @@
----
-layout: page
-title: About
-permalink: /about/
----
-#About
-	暂时还没有内容。。。
