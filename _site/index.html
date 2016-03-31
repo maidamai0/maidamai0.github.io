@@ -14,14 +14,24 @@
 	  <link rel="canonical" href="http://www.tonghao.tk/">
 	  <link rel="alternate" type="application/rss+xml" title="袁同浩" href="http://www.tonghao.tk/feed.xml">
 	<style>
-		ul.site-nav{/*background-image: url('http://www.tonghao.tk/downloads/background.jpg');height: 260px;*/ list-style-type: none; display: inline-block;float:left;margin-left:100px;margin-top: 80px;}
-		body{background-color: linen;}
+		ul.site-nav{
+			float: left;
+			margin-left:10px;
+			margin-top: 80px;
+			width: 40px;
+		}
+		li.site-title{
+			list-style-type: none;
+			padding: 0px 100px;
+			display: block;
+		}
+		body{background-color: #f3f3f3;}
 		article{border-style: none none solid none;border-width:thin;}		
 		h1{border-style: none none solid none;border-width:thin;position:static;}
 		div.home{ border-style: none none solid none;border-width:thin; }
 		ul.psot-list{margin-left: inherit;}
-   		footer{width:100%;text-align:center;height:0px;bottom: 0px;}
-		footer li{display:inline-block;list-style-type:none;padding:0px 100px;}
+   		footer{width:100%;text-align:center;}
+		footer li{display:inline-block;list-style-type:none;padding:0px 100px;margin: 0px;}
 	</style>
 </head>
 
@@ -29,11 +39,10 @@
   <body>
 
     <header class="site-header">
-
-      <ul class="site-nav">
-        <li><a class="site-title" href="/">Home</a></li>
-        <li><a class="site-title" href="/archives.html">Archives</a></li>
-        <li><a class="site-title" href="/about.html">About</a></li>
+    <ul class="site-nav">
+        <li class="site-title"><a href="/">Home</a></li>
+        <li class="site-title"><a href="/archives.html">Archives</a></li>
+        <li class="site-title"><a href="/about.html">About</a></li>
         <!--<nav class="site-nav">
               <a href="#" class="menu-icon">
                    <svg viewBox="0 0 18 15">
@@ -58,7 +67,6 @@
               </div>
          </nav>     -->
       </ul>  
-  </nav>
 </header>
 
 
