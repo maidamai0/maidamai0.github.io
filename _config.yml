@@ -21,3 +21,5 @@ github_username:  maidamai0
 
 # Build settings
 markdown: kramdown
+
+theme: jekyll-theme-cayman
