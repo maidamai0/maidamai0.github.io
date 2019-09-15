@@ -1,4 +1,0 @@
-<footer class="site-footer">
-         <p>folk me on {%include icon-github.html%} | Powered by <a href="https://jekyllrb.com">Jekyll</a>|
-	<a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a></p>
-</footer>
