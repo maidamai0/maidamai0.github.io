@@ -1,0 +1,78 @@
+I"»<h1 id="ssltls">SSL/TLS</h1>
+
+<p><strong>Key word</strong> : Encription,SSl,TSL,TLS certificate,HTTPS,keys, How to install a certificate on a website</p>
+
+<h2 id="ltiile-history">Ltiile history</h2>
+
+<ul>
+  <li>Netscape originally invented SSL in the mid-90s</li>
+  <li>Google began marking unencrypted sites <strong>Not Secure</strong></li>
+</ul>
+
+<h2 id="problem">Problem</h2>
+
+<p>When sending a messge between two parties you have two problems that you need to address</p>
+
+<ol>
+  <li>How do you know that no one has read the message</li>
+  <li>HOw do you know that no one has changed the message</li>
+</ol>
+
+<h2 id="answer">Answer</h2>
+
+<ol>
+  <li>Encrypt it. This makes the mesage unreadable</li>
+  <li>Sign it. The allows the recipient to be confident that it was you who send the message, without modified.</li>
+</ol>
+
+<p>Both of these process require the use of keys.</p>
+
+<h2 id="encription">Encription</h2>
+
+<p>The internet is designed to transfer free infomation on its born.HTTP transfer with plain text without encription</p>
+
+<ul>
+  <li>Symmetric encription(Two-way encription ):The (private) key is used to encrypt and decrypt.</li>
+  <li>Key exchange is important problem</li>
+  <li>Asymmetric encription: public-private key pair. Public key is used to encription and private key is used to decription.</li>
+</ul>
+
+<h2 id="keys">Keys</h2>
+
+<p>These keys are simply numbers (128 bit being common) that are then combined with the message using a particular method, commonly known as an algorithm- e.g. RSA, to either encrypt or sign the message.</p>
+
+<h2 id="ssl-certificates">SSL certificates</h2>
+
+<p>How do you know that a particualr key belongs to a person/entity?</p>
+
+<p>SSL certificate serve as a ID card/passport in everyday life, which established a link between a photo and a person, and that link is verified by a trusted authority(passport office)</p>
+
+<p>A digital certificate(such as SSL certificate) provides a link between a <strong>public key</strong> and an entity that has been verified(signed) by a trusted third party(A certificate authority)</p>
+
+<p>A digital certificate provides a convenient way of distributing trusted publick encryption keys.</p>
+
+<h2 id="exchanging-keys-public-key-infrastrtucture">Exchanging keys-Public Key Infrastrtucture</h2>
+
+<ul>
+  <li>SSL Secure Sockets Layer, the original encryption protocol used with HTTPS</li>
+  <li>TLS Transport Layer security, the more recent encryption protocol has replaced SSL in response to known vulnerabilities in SSLv3.</li>
+  <li>HTPS security version of HTTP</li>
+  <li>PKI entire trust model that facilitates public key encryption</li>
+</ul>
+
+<h2 id="ssltsl-hand-shake">SSL/TSL hand shake</h2>
+
+<p>TLS1.2 handshake
+<img src="/images/tls_handshake_1_2.png" alt="tls1.2 handle shake" /></p>
+
+<p>TLS1.3 handshake
+<img src="/images/tls_handshake_1_3.jpg" alt="tls1.3 handle shake" /></p>
+
+<h2 id="reference">Reference</h2>
+
+<ol>
+  <li><a href="https://geekflare.com/tls-101/">TLS 101</a></li>
+  <li><a href="http://www.steves-internet-guide.com/ssl-certificates-explained/">SSL and SSL Certificates Explained For Beginners</a></li>
+  <li><a href="https://www.thesslstore.com/blog/tls-handshake-failed/">How to fix the SSL/TLS Handshake Failed error</a></li>
+</ol>
+:ET
