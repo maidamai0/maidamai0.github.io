@@ -62,6 +62,14 @@ Most of the time, you may want to create your own delegates and use predefined m
 * modelData
 * index
 
+### Repeater
+
+Repeater can be seen as a very basic view, it creates elements according to model and delegate.However, repeater does't arrange elements it created, and ofen used with Layout/Positioner,the parent of the created elements is repeater's parent.Delegate of repeater must be a Item-based.
+
+delegate is the default property of repeater.?
+
+model of repeater can be many types including Models in QML, different type expose different property to delegate.
+
 ## interact with c++
 
 [Define QML types from c++](https://doc.qt.io/qt-5/qtqml-cppintegration-definetypes.html)
