@@ -41,6 +41,25 @@ Qt Quick Control module provides a set of controls can be used to build complete
 
 ## Model and views
 
+model is datas,delegate is responsible visualization for every data, view is like a container to put those UIs.
+
+Qt has predefined views and models, you can create any UI to serve as a delegate.
+
+``` pseudo code
+ for data : datas {
+    element = delegate(data) // visualize data
+    view.add(element)
+ }
+ ```
+
+Most of the time, you may want to create your own delegates and use predefined models and views.
+
+### Model
+
+* role, can be accessed directly or through model.[role_name]
+* modelData
+* index
+
 ## interact with c++
 
 ## Scene graph
