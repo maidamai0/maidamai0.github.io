@@ -16,6 +16,8 @@ Qt Quick Control module provides a set of controls can be used to build complete
 
 ## syntax
 
+### Scope and name resolution
+
 ## Type system
 
 ## elements
@@ -43,12 +45,15 @@ Qt Quick Control module provides a set of controls can be used to build complete
 
 ## interact with c++
 
+[Define QML types from c++](https://doc.qt.io/qt-5/qtqml-cppintegration-definetypes.html)
+
 ## Scene graph
 
 ## Reference
 
 * [Qt Quick](https://doc-snapshots.qt.io/qt5-dev/qtquick-index.html#)
 * [Qt Quick Controls](https://doc.qt.io/qt-5/qtquickcontrols-index.html)
+* [Scope and name resolution](https://doc.qt.io/qt-5/qtqml-documents-scope.html)
 * [Qt QML base type](https://doc-snapshots.qt.io/qt5-dev/qtqml-qmlmodule.html)
 * [Use Case - Positioners and Layouts In QML](https://doc.qt.io/qt-5/qtquick-usecase-layouts.html)
 * [Important Concepts In Qt Quick - Positioning](https://doc.qt.io/qt-5/qtquick-positioning-topic.html)
