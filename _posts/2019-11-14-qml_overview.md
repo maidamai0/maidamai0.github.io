@@ -9,8 +9,8 @@ In this post, I tryed to make a clear framewok of QML language howerver, this po
 Qt QML module is provides the QML engine and language infrastructure.
 Qt QML provides two API:
 
-* QML API: for creating user interface
-* C++ API: for extending QML applications with c++ code.
+* [QML API](https://doc.qt.io/qt-5/qtqml-qmlmodule.html): for creating user interface
+* [C++ API](https://doc.qt.io/qt-5/qtqml-module.html): for extending QML applications with c++ code.
 
 Qt Quick module is the standard library for writing for QML applications,Providing all the basic types for creating user interfaces with QML.
 
@@ -218,7 +218,17 @@ model of repeater can be many types including Models in QML, different type expo
 
 ## interact with c++
 
+* C++ -> QML: c++ code serve as model and do heavy logic
+   1. Register c++ class/object to qml engine
+   2. Create a plugin with c++
+* QML -> C++: Load a qml file to c++ code.
+   1. Load with QQmlComponent->load a qml file as a c++ object.
+   2. Load with QQuickView/QQuickView.
+
+[Overview of QML and C++ integration](https://doc.qt.io/qt-5/qtqml-cppintegration-overview.html)
+[Interacting with QML Objects from C++](https://doc.qt.io/qt-5/qtqml-cppintegration-interactqmlfromcpp.html)
 [Define QML types from c++](https://doc.qt.io/qt-5/qtqml-cppintegration-definetypes.html)
+[Creating c++ plugins for QML](https://doc.qt.io/qt-5/qtqml-modules-cppplugins.html)
 
 ## Scene graph
 
