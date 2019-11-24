@@ -22,6 +22,24 @@ Qt Quick Control module provides a set of controls can be used to build complete
 
 * Visual elements has a geometry on the screen, Item is the base.
 * non-visual elements provides some functionality.
+* [Item](https://doc.qt.io/qt-5/qml-qtquick-item.html)
+
+* QtQuick
+  * Rectangle
+  * MouseArea
+  * Image
+  * Text
+  * [Canvas](https://doc.qt.io/qt-5/qml-qtquick-canvas.html)
+  * Grid
+  * Column
+  * Row
+* [QtQuick.layouts](https://doc.qt.io/qt-5/qtquicklayouts-overview.html)
+  * GridLayout
+  * ColumnLayout
+  * RowLayout
+  * StackLayout
+* [QtQuick.Controls](https://doc.qt.io/qt-5/qml-qtquick-controls2-control.html)
+  * Controls
 
 ## user defined elements
 
@@ -30,6 +48,12 @@ Qt Quick Control module provides a set of controls can be used to build complete
 * C++?
 
 ## layout
+
+## Controls
+
+Control is the base type of all items in QtQuick.Control.
+
+[Qml Control Type](https://doc.qt.io/qt-5/qml-qtquick-controls2-control.html)
 
 ### Manual/Fixed position
 
@@ -41,9 +65,15 @@ Qt Quick Control module provides a set of controls can be used to build complete
 
 ## Model and views
 
+## State and transtitions
+
 ## interact with c++
 
 ## Scene graph
+
+## Frame graph
+
+## 3D
 
 ## Reference
 
