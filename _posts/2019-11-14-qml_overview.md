@@ -43,6 +43,8 @@ Parent directory of *qmldir* file.
 
 ## elements
 
+// TODO create a online inherits diagram
+
 * Visual elements has a geometry on the screen, Item is the base.
 * non-visual elements provides some functionality.
 * [Item](https://doc.qt.io/qt-5/qml-qtquick-item.html)
@@ -57,12 +59,72 @@ Parent directory of *qmldir* file.
   * Column
   * Row
 * [QtQuick.layouts](https://doc.qt.io/qt-5/qtquicklayouts-overview.html)
+  * [Layout](https://doc.qt.io/qt-5/qml-qtquick-layouts-layout.html)
   * GridLayout
   * ColumnLayout
   * RowLayout
   * StackLayout
-* [QtQuick.Controls](https://doc.qt.io/qt-5/qml-qtquick-controls2-control.html)
-  * Controls
+
+  **Note**: A layout is responsible for its children's geometry. You should therefore not specify width, height, x, y or any other properties that might influence those properties (such as anchors) on those items. Otherwise there would be a conflict of interest, and the result is undefined. This is also the case if the child item is a layout. Therefore, only layouts with no parent layout can have anchors.fill: parent.
+  
+* [QtQuick.Controls](https://doc.qt.io/qt-5/qtquick-controls2-qmlmodule.html)
+  * [Action](https://doc.qt.io/qt-5/qml-qtquick-controls2-action.html)
+  * [ActionGroup](https://doc.qt.io/qt-5/qml-qtquick-controls2-actiongroup.html)
+  * [ApplicationWindow](https://doc.qt.io/qt-5/qml-qtquick-controls2-applicationwindow.html)
+  * [ButtonGroup](https://doc.qt.io/qt-5/qml-qtquick-controls2-buttongroup.html)
+  * [Controls]((https://doc.qt.io/qt-5/qml-qtquick-controls2-control.html))
+    * [AbstractButton](https://doc.qt.io/qt-5/qml-qtquick-controls2-abstractbutton.html)
+      * Button
+        * RoundButton
+        * ToolButton
+      * CheckBox
+      * DelayButton
+      * ItemDelegate
+        * CheckDelegate
+        * RadioDelegate
+        * SwipeDelegate
+        * SwitchDelegate
+      * MenuBarItem
+      * RadioButton
+      * Switch
+      * TabButton
+      * ScrollBar
+      * ScrollIndicator
+    * [BusyIndicator](https://doc.qt.io/qt-5/qml-qtquick-controls2-busyindicator.html)
+    * Combobox
+    * Dial
+    * MenuSeparator
+    * Pane
+      * Frame
+        * GroupBox
+      * Page
+      * ScrollView
+      * ToolBar
+    * PageIndicator
+    * ProgressBar
+    * RangeSlider
+    * Slider
+    * SpinBox
+    * SplitView
+    * StackView
+    * ToolSeparator
+    * Tumbler
+  * [Container](https://doc.qt.io/qt-5/qml-qtquick-controls2-container.html)
+    * DialogButtonBox
+    * MenuBar
+    * SwipeView
+    * TabBar
+  * Label
+  * [Popup](https://doc.qt.io/qt-5/qml-qtquick-controls2-popup.html)
+    * Dialog
+    * ToolTip
+    * Menu
+    * Drawer
+  * Splithandle
+  * [TextArea](https://doc.qt.io/qt-5/qml-qtquick-controls2-textarea.html)
+  * TextField
+* QtQuick.Window
+  * [Window](https://doc.qt.io/qt-5/qml-qtquick-window-window.html)
 
 ## user defined elements
 
@@ -71,6 +133,29 @@ Parent directory of *qmldir* file.
 * C++?
 
 ## layout
+
+QtQuick.Layouts
+
+* Alignment
+* Resizable
+* Size constraints
+* Spacing
+
+More about item size.
+
+* Item
+  * width
+  * height
+  * implicitWidth, will be used if width is not specified
+  * implicitHeight, will be used if height is not specified.
+* Layouts
+  * Layout.minimumWidth
+  * Layout.prefferedHeight
+  * Layout.MaxmumWidth
+
+* If Layout.fillWidth/Height set to false, Layout.prefferedWidth/Height will be used; if set to true, width/height is between [min, max]
+* The implicitWidth/Height depends on its contents.
+* Image and Text has readonly implicitWidth/Height.
 
 ## Controls
 
