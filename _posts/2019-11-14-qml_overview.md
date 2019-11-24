@@ -94,7 +94,7 @@ model is datas,delegate is responsible visualization for every data, view is lik
 
 Qt has predefined views and models, you can create any UI to serve as a delegate.
 
-```pseudo code
+```cpp
  for data : datas {
     element = delegate(data) // visualize data
     view.add(element)
