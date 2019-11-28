@@ -22,17 +22,6 @@ Qt Quick Control module provides a set of controls can be used to build complete
 
 ### qmlscene
 
-### QML import path
-
-Parent directory of *qmldir* file.
-
-* QML2_IMPORT_PATH environment variable, path of qml module(a directory contains a module definition qmldir file)
-
-* QML_IMPORT_TRACE environment variable
-* QML_IMPORT_PATH qmake keyword, used in qtcreator
-
-[QML Import Path](https://doc.qt.io/qt-5/qtqml-syntax-imports.html#qml-import-path)
-
 [Debugging QML Applications](https://doc.qt.io/qt-5/qtquick-debugging.html)
 
 ## syntax
@@ -40,18 +29,23 @@ Parent directory of *qmldir* file.
 ### Import
 
 1. [Import a directory](https://doc.qt.io/qt-5/qtqml-syntax-directoryimports.html)
-      1. A local directoy, all qml files, no js files.
-      2. A local directoy with a **qmldir** file, types specified in the qmldir file, may have js files.
-      3. A remote directoy with a **qmldir** file, types specified in the qmldir file.
-      4. Import to a namespace, import a directory dont create a namespace by default, but you can create one with **import dir as namespace**
+   1. A local directoy, all qml files, no js files.
+   2. A local directoy with a **qmldir** file, types specified in the qmldir file, may have js files.
+   3. A remote directoy with a **qmldir** file, types specified in the qmldir file.
+   4. Import to a namespace, import a directory dont create a namespace by default, but you can create one with **import dir as namespace**
 2. [Import a module/plugin](https://doc.qt.io/qt-5/qtqml-modules-topic.html)
-      1. Modules can be [c++ plugins](https://doc.qt.io/qt-5/qqmlextensionplugin.html) or QML documents.
-      2. Module is defined and exported by a qmldir file.
-      3. Module's name is a namespace.
-      4. Module may contains QML types, js resources and c++ plugins, all thie file must in the same directory
-      5. [Identified modules](https://doc.qt.io/qt-5/qtqml-modules-identifiedmodules.html)
-      6. A module requires at leat one type registered to be considered valid.
-      7. Provide type information to qtcretor with **qmltypes** file
+   1. Modules can be [c++ plugins](https://doc.qt.io/qt-5/qqmlextensionplugin.html) or QML documents.
+   2. Module is defined and exported by a qmldir file.
+   3. Module's name is a namespace.
+   4. Module may contains QML types, js resources and c++ plugins, all thie file must in the same directory
+   5. [Identified modules](https://doc.qt.io/qt-5/qtqml-modules-identifiedmodules.html)
+   6. A module requires at leat one type registered to be considered valid.
+   7. Provide type information to qtcretor with **qmltypes** file
+3. Import path
+   1. Directories contain a module definition qmldir file.
+   2. **QML2_IMPORT_PATH** can be set to a list of import path which will be used by any QML application
+   3. **QML_IMPORT_PATH** qmake keyword, used in qtcreator
+   4. **QML_IMPORT_TRACE** environment variable, if set to **1**, import path will be recoreded in log.
 
 ### Scope and name resolution
 
