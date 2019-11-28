@@ -16,7 +16,7 @@ windows 10 1909 64 bit && msvc_2013
 
 ## Create a qmldir file
 
-## Create a qmltypes file
+## Create a qmltypes file(optinal, for qtcreator)
 
 ## Reference
 
