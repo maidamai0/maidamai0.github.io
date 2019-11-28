@@ -26,7 +26,7 @@ Qt Quick Control module provides a set of controls can be used to build complete
 
 Parent directory of *qmldir* file.
 
-* QML2_IMPORT_PATH environment variable
+* QML2_IMPORT_PATH environment variable, path of qml module(a directory contains a module definition qmldir file)
 
 * QML_IMPORT_TRACE environment variable
 * QML_IMPORT_PATH qmake keyword, used in qtcreator
@@ -37,9 +37,29 @@ Parent directory of *qmldir* file.
 
 ## syntax
 
+### Import
+
+1. [Import a directory](https://doc.qt.io/qt-5/qtqml-syntax-directoryimports.html)
+      1. A local directoy, all qml files, no js files.
+      2. A local directoy with a **qmldir** file, types specified in the qmldir file, may have js files.
+      3. A remote directoy with a **qmldir** file, types specified in the qmldir file.
+      4. Import to a namespace, import a directory dont create a namespace by default, but you can create one with **import dir as namespace**
+2. [Import a module/plugin](https://doc.qt.io/qt-5/qtqml-modules-topic.html)
+      1. Modules can be [c++ plugins](https://doc.qt.io/qt-5/qqmlextensionplugin.html) or QML documents.
+      2. Module is defined and exported by a qmldir file.
+      3. Module's name is a namespace.
+      4. Module may contains QML types, js resources and c++ plugins, all thie file must in the same directory
+      5. [Identified modules](https://doc.qt.io/qt-5/qtqml-modules-identifiedmodules.html)
+      6. A module requires at leat one type registered to be considered valid.
+      7. Provide type information to qtcretor with **qmltypes** file
+
 ### Scope and name resolution
 
 ## Type system
+
+1. [Object Type](https://doc.qt.io/qt-5/qtqml-typesystem-objecttypes.html)
+   1. Made from c++
+   2. Made form qml
 
 ## elements
 
@@ -171,9 +191,9 @@ Control is the base type of all items in QtQuick.Control.
 
 ### Layout
 
-## Model and views
+## State and transtision
 
-## State and
+## Model and views
 
 model is datas,delegate is responsible visualization for every data, view is like a container to put those UIs.
 
@@ -216,19 +236,28 @@ model of repeater can be many types including Models in QML, different type expo
 * model object
 * number
 
-## interact with c++
+## Interact with c++
 
 * C++ -> QML: c++ code serve as model and do heavy logic
    1. Register c++ class/object to qml engine
    2. Create a plugin with c++
 * QML -> C++: Load a qml file to c++ code.
    1. Load with QQmlComponent->load a qml file as a c++ object.
-   2. Load with QQuickView/QQuickView.
+   2. Load with QQuickView/QQuickView.QQuickWidget is a convinient wrapper of QQuickWindow.
 
 [Overview of QML and C++ integration](https://doc.qt.io/qt-5/qtqml-cppintegration-overview.html)
+
 [Interacting with QML Objects from C++](https://doc.qt.io/qt-5/qtqml-cppintegration-interactqmlfromcpp.html)
+
 [Define QML types from c++](https://doc.qt.io/qt-5/qtqml-cppintegration-definetypes.html)
+
 [Creating c++ plugins for QML](https://doc.qt.io/qt-5/qtqml-modules-cppplugins.html)
+
+## Type conversion between QML and C++
+
+[Type conversion between QML and C++](https://doc.qt.io/qt-5/qtqml-cppintegration-data.html)
+
+## [Graphics View Framewok](https://doc.qt.io/qt-5/graphicsview.html)
 
 ## Scene graph
 
