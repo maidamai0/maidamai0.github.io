@@ -1,0 +1,2 @@
+module TimeModule
+plugin example_qml_plugin
