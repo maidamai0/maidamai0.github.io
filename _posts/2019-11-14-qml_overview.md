@@ -4,7 +4,7 @@ layout: post
 
 # Overview of QML language
 
-In this post, I tryed to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
 
 Qt QML module is provides the QML engine and language infrastructure.
 Qt QML provides two API:
@@ -62,6 +62,9 @@ Qt Quick Control module provides a set of controls can be used to build complete
 * Visual elements has a geometry on the screen, Item is the base.
 * non-visual elements provides some functionality.
 * [Item](https://doc.qt.io/qt-5/qml-qtquick-item.html)
+* [Component](https://doc.qt.io/qt-5/qml-qtqml-component.html)
+  * A seprate qml file
+  * A Component type in a qml file.
 
 * QtQuick
   * Rectangle
@@ -171,6 +174,8 @@ More about item size.
 * The implicitWidth/Height depends on its contents.
 * Image and Text has readonly implicitWidth/Height.
 
+Flow
+
 ## Controls
 
 Control is the base type of all items in QtQuick.Control.
@@ -187,11 +192,9 @@ Control is the base type of all items in QtQuick.Control.
 
 ## State and transtision
 
-## Model and views
+## [Model and views](https://doc.qt.io/qt-5/qtquick-modelviewsdata-modelview.html)
 
 model is datas,delegate is responsible visualization for every data, view is like a container to put those UIs.
-
-Qt has predefined views and models, you can create any UI to serve as a delegate.
 
 ```cpp
  for data : datas {
@@ -200,7 +203,7 @@ Qt has predefined views and models, you can create any UI to serve as a delegate
  }
  ```
 
-Most of the time, you may want to create your own delegates and use predefined models and views.
+Qt has predefined views and models, you can create any UI to serve as a delegate.Most of the time, you may want to create your own delegates and use predefined models and views.
 
 ### Model
 
@@ -219,16 +222,23 @@ ListModel
 
 [Using C++ Models with Qt Quick Views](https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qobjectlist-based-model)
 
+### Views
+
+* ListView
+* GridView
+* PathView
+
 ### Repeater
 
-Repeater can be seen as a very basic view, it creates elements according to model and delegate.However, repeater does't arrange elements it created, and ofen used with Layout/Positioner,the parent of the created elements is repeater's parent.Delegate of repeater must be a Item-based.
+Repeater can be seen as a very basic view, it creates elements according to model and delegate.However, a repeater does't arrange elements it created, and ofen used with Layout/Positioner to do the arrange job.
 
-delegate is the default property of repeater.
-
-model of repeater can be many types including Models in QML, different type expose different property to delegate.
-
-* model object
-* number
+1. **delegate** is the default property of repeater.
+2. The parent of the created elements is the repeater's parent.
+3. Delegate of repeater must be a Item-based.
+4. All items in repeater have an attached property **index**
+5. **model** of repeater can be many types including Models in QML, different type expose different property to delegate.
+    1. model object
+    2. number
 
 ## Interact with c++
 
