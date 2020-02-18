@@ -16,6 +16,9 @@ windows 10 1909 64 bit && msvc_2013
 
 ## Create a qmldir file
 
+1. The module name is specified with module keyword in qmldir
+2. module name must be the same with module uri
+
 ## Create a qmltypes file(optinal, for qtcreator)
 
 ## Reference
