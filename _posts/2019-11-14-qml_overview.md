@@ -240,6 +240,12 @@ Repeater can be seen as a very basic view, it creates elements according to mode
     1. model object
     2. number
 
+## [Qt Widgets Model/View]
+
+### Model
+
+QAbstractItemModel is the interface of all models. 
+
 ## Interact with c++
 
 * C++ -> QML: c++ code serve as model and do heavy logic
