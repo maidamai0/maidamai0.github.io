@@ -64,7 +64,7 @@ auto Model::data(const QModelIndex& index, int role) const -> QVariant {
       }
     }
     case Qt::CheckStateRole: {
-      if (row == 1 && column == 0) {
+      if (row == 1 && column == 1) {
         return Qt::Checked;
       }
     }

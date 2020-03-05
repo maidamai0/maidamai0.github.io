@@ -289,3 +289,4 @@ QML/Js engine is single thread?
 * [Use Case - Positioners and Layouts In QML](https://doc.qt.io/qt-5/qtquick-usecase-layouts.html)
 * [Important Concepts In Qt Quick - Positioning](https://doc.qt.io/qt-5/qtquick-positioning-topic.html)
 * [Models and Views in Qt Quick](https://doc-snapshots.qt.io/qt5-dev/qtquick-modelviewsdata-modelview.html)
+* [Model View Programming](https://doc.qt.io/qt-5/model-view-programming.html)
