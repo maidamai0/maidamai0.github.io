@@ -13,3 +13,5 @@ file(GLOB hdr "*.h")
 add_executable(send_mail ${src} ${hdr})
 
 target_link_libraries(send_mail Qt5::Core Qt5::Gui)
+
+add_executable(mapi mapi.cpp)
