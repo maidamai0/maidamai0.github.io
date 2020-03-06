@@ -13,31 +13,59 @@
 
 #include <atomic>
 #include <memory>
-
-// clang-format off
-#include <Windows.h>
 #include <string>
 #include <vector>
+#include <tuple>
+
+#define NOMINMAX
+#include <Windows.h>
+#undef NOMINMAX
 #include "MAPI.h"
-// clang-format on
 
 class MapiClient {
 public:
-  MapiClient();
+  MapiClient() = default;
   ~MapiClient();
-  inline bool IsValid() const noexcept;
-  void SendMail();
+
+  /**
+   * @brief Send Mail
+   *
+   * @return int  0 for success, others for error.
+   */
+  int SendMail();
+
+  /**
+   * @brief Add four types of recipients
+   * @{
+   */
+  void AddTo(std::wstring&& address, std::wstring&& name) noexcept;
+  void AddCC(std::wstring&& address, std::wstring&& name) noexcept;
+  void AddBCC(std::wstring&& address, std::wstring&& name) noexcept;
+  void AddOriginator(std::wstring&& address, std::wstring&& name) noexcept;
+  /**
+   * @}
+   *
+   */
+
+  /**
+   * @brief add attachemnt
+   *
+   * @param file  full path of the file
+   */
+  void AddAtachment(std::wstring&& file) noexcept;
+
+  void SetSubject(std::wstring&& subject) noexcept;
+  void SetBody(std::wstring&& body) noexcept;
 
 private:
-  void load_mapi_dll();
-  void construct_message();
+  bool load_mapi_dll();
+  void add_recipients(const int type, std::wstring&& address,
+                      std::wstring&& name) noexcept;
 
 private:
-  std::atomic_bool is_valid_{false};
-
-  lpMapiMessageW message_;
-  std::vector<std::string> attatchments_;
-  std::string subject_;
-  std::string body_;
-  std::string reveiver_;
+  std::vector<std::wstring> files_;
+  // type, address, name
+  std::vector<std::tuple<int, std::wstring, std::wstring>> recipients_;
+  std::wstring subject_;
+  std::wstring body_;
 };
