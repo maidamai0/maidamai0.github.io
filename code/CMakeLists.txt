@@ -1,2 +1,4 @@
 add_subdirectory(open_default_mail_client_on_windows)
 add_subdirectory(cpp_extension_for_qml)
+add_subdirectory(qt_widgets_model_view_tutorial)
+add_subdirectory(qt_process)
