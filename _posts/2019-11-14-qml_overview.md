@@ -295,3 +295,12 @@ QML/Js engine is single thread?
 * [Important Concepts In Qt Quick - Positioning](https://doc.qt.io/qt-5/qtquick-positioning-topic.html)
 * [Models and Views in Qt Quick](https://doc-snapshots.qt.io/qt5-dev/qtquick-modelviewsdata-modelview.html)
 * [Model View Programming](https://doc.qt.io/qt-5/model-view-programming.html)
+
+xinyu
+
+QQmlEngine
+QQmlComponent
+QQmlContext
+QQuickItem
+
+iterate qml in c++
