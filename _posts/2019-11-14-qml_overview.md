@@ -280,6 +280,11 @@ QAbstractItemModel is the interface of all models.
 QML/Js engine is single thread?
 [WorkerScript](https://doc.qt.io/qt-5/qml-qtqml-workerscript.html)
 
+## Question to be answered
+
+1. A c++ type registerd to QML engine can not be created in c++ code?(video_hub code)
+2. How to know width and height of ListView?
+
 ## Reference
 
 * [Qt Quick](https://doc-snapshots.qt.io/qt5-dev/qtquick-index.html#)
