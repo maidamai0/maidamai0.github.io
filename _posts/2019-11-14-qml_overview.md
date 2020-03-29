@@ -242,9 +242,7 @@ Repeater can be seen as a very basic view, it creates elements according to mode
 
 ## [Qt Widgets Model/View]
 
-### Model
-
-QAbstractItemModel is the interface of all models. 
+QAbstractItemModel is the interface of all models.
 
 ## Interact with c++
 
@@ -280,6 +278,16 @@ QAbstractItemModel is the interface of all models.
 QML/Js engine is single thread?
 [WorkerScript](https://doc.qt.io/qt-5/qml-qtqml-workerscript.html)
 
+## Internals
+
+QQuickItem(c++) Item(QML)
+QQmlEngine
+QQmlComponent
+[QQmlContext](https://doc.qt.io/qt-5/qqmlcontext.html#details)
+  Expose C++ OBject to to QML.
+
+iterate qml in c++
+
 ## Question to be answered
 
 1. A c++ type registerd to QML engine can not be created in c++ code?(video_hub code)
@@ -295,12 +303,3 @@ QML/Js engine is single thread?
 * [Important Concepts In Qt Quick - Positioning](https://doc.qt.io/qt-5/qtquick-positioning-topic.html)
 * [Models and Views in Qt Quick](https://doc-snapshots.qt.io/qt5-dev/qtquick-modelviewsdata-modelview.html)
 * [Model View Programming](https://doc.qt.io/qt-5/model-view-programming.html)
-
-xinyu
-
-QQmlEngine
-QQmlComponent
-QQmlContext
-QQuickItem
-
-iterate qml in c++

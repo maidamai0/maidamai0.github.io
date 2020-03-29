@@ -1,7 +1,13 @@
-# add_subdirectory(open_default_mail_client_on_windows)
-# add_subdirectory(cpp_extension_for_qml)
-# add_subdirectory(qt_widgets_model_view_tutorial)
-# add_subdirectory(qt_process)
+# dependencies
+add_subdirectory(dependencies/fmt)
+set(depends 
+  fmt/include
+)
+foreach(dep ${depends})
+  message(STATUS "include path ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/${dep}")
+  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/dependencies/${dep})
+endforeach()
+link_libraries(fmt::fmt)
 
 # get subdir
 # https://stackoverflow.com/questions/7787823/cmake-how-to-get-the-name-of-all-subdirectories-of-a-directory
