@@ -8,25 +8,20 @@ auto main(int argc, char* argv[]) -> int {
 
   QApplication app(argc, argv);
 
-  // QQuickWidget* q = new QQuickWidget;
+  // auto* q = new QQuickWidget;
   // q->setResizeMode(QQuickWidget::SizeRootObjectToView);
-  // q->setSource(
-  //   QUrl("file:///D:/open_source_project/maidamai0.github.io/code/grab_"
-  //        "image_in_qml/main.qml"));
+  // q->setSource(QUrl("qrc:///main.qml"));
   // q->show();
 
-  // QQuickView* q = new QQuickView;
+  // auto* q = new QQuickView;
   // q->setResizeMode(QQuickView::SizeRootObjectToView);
-  // q->setSource(QUrl("file:///D:/open_source_project/maidamai0.github.io/code/"
-  //                   "grab_image_in_qml/main.qml"));
+  // q->setSource(QUrl("qrc:///main.qml"));
 
   // QWidget* container = QWidget::createWindowContainer(q);
   // container->show();
 
   QQmlApplicationEngine engine;
-  const QUrl url(
-    QStringLiteral("file:///D:/open_source_project/maidamai0.github.io/code/"
-                   "grab_image_in_qml/main.qml"));
+  const QUrl url(QStringLiteral("qrc:///main.qml"));
   QObject::connect(
     &engine, &QQmlApplicationEngine::objectCreated, &app,
     [url](QObject* obj, const QUrl& objUrl) {

@@ -23,7 +23,7 @@ endforeach()
 
 file(GLOB src "*.cpp")
 
-add_executable(${TARGET} ${src})
+add_executable(${TARGET} ${src} resource.qrc)
 
 get_target_property(_qmake_executable Qt5::qmake IMPORTED_LOCATION)
 get_filename_component(_qt_bin_dir "${_qmake_executable}" DIRECTORY)
@@ -34,3 +34,5 @@ add_custom_command(
     POST_BUILD
     COMMAND ${WINDEPLOYQT_EXECUTABLE} --qmldir ${CMAKE_CURRENT_SOURCE_DIR}/../ $<TARGET_FILE:${TARGET}>
 )
+
+execute_process(COMMAND python ${CMAKE_CURRENT_SOURCE_DIR}/../update_resource.py ${CMAKE_CURRENT_SOURCE_DIR})
