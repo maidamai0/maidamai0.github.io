@@ -1,9 +1,7 @@
-#include "qimage.h"
 #include <QColor>
 #include <QFile>
 #include <QImage>
 
-#include <cstdlib>
 #include <iostream>
 #include <string>
 
