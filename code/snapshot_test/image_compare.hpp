@@ -34,37 +34,37 @@ auto image_diff(const std::string& expected, const std::string& actual,
   QImage expected_image(expected.c_str());
   QImage actual_image(actual.c_str());
 
-  double totaldiff = 0.0; // holds the number of different pixels
-  int h = expected_image.height();
-  int w = expected_image.width();
-  int hsecond = actual_image.height();
-  int wsecond = actual_image.width();
-  if (w != wsecond || h != hsecond) {
+  int height_expected = expected_image.height();
+  int width_expected = expected_image.width();
+  int height_actual = actual_image.height();
+  int width_actual = actual_image.width();
+  if (width_expected != width_actual || height_expected != height_actual) {
     std::cerr << "Error, pictures must have identical dimensions!\n";
     return false;
   }
 
-  for (int y = 0; y < h; y++) {
-    uint* firstLine = (uint*) expected_image.scanLine(y);
-    uint* secondLine = (uint*) actual_image.scanLine(y);
-    for (int x = 0; x < w; x++) {
-      uint pixelFirst = firstLine[x];
-      int rFirst = qRed(pixelFirst);
-      int gFirst = qGreen(pixelFirst);
-      int bFirst = qBlue(pixelFirst);
-      uint pixelSecond = secondLine[x];
-      int rSecond = qRed(pixelSecond);
-      int gSecond = qGreen(pixelSecond);
-      int bSecond = qBlue(pixelSecond);
+  double total_diff = 0.0; // holds the number of different pixels
+  for (int y = 0; y < height_expected; y++) {
+    uint* first_line = (uint*) expected_image.scanLine(y);
+    uint* second_line = (uint*) actual_image.scanLine(y);
+    for (int x = 0; x < width_expected; x++) {
+      uint pixel_first = first_line[x];
+      int r_first = qRed(pixel_first);
+      int g_first = qGreen(pixel_first);
+      int b_first = qBlue(pixel_first);
+      uint pixel_second = second_line[x];
+      int r_second = qRed(pixel_second);
+      int g_second = qGreen(pixel_second);
+      int b_second = qBlue(pixel_second);
 
       const static auto max_color = 255.0;
-      totaldiff += std::abs(rFirst - rSecond) / max_color;
-      totaldiff += std::abs(gFirst - gSecond) / max_color;
-      totaldiff += std::abs(bFirst - bSecond) / max_color;
+      total_diff += std::abs(r_first - r_second) / max_color;
+      total_diff += std::abs(g_first - g_second) / max_color;
+      total_diff += std::abs(b_first - b_second) / max_color;
     }
   }
 
-  const auto diff = (totaldiff * 100) / (w * h * 3);
+  const auto diff = (total_diff * 100) / (width_expected * height_expected * 3);
 
   return (diff < theshold);
 }
