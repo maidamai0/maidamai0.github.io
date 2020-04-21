@@ -96,14 +96,14 @@ void UserModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            typedef void (UserModel::*_t)();
+            using _t = void (UserModel::*)();
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&UserModel::signIn)) {
                 *result = 0;
                 return;
             }
         }
         {
-            typedef void (UserModel::*_t)(int );
+            using _t = void (UserModel::*)(int);
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&UserModel::onNameChanged)) {
                 *result = 1;
                 return;
@@ -143,15 +143,15 @@ const QMetaObject *UserModel::metaObject() const
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *UserModel::qt_metacast(const char *_clname)
+auto UserModel::qt_metacast(const char *_clname) -> void *
 {
-    if (!_clname) return nullptr;
+    if (_clname == nullptr) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_UserModel.stringdata0))
         return static_cast<void*>(this);
     return QObject::qt_metacast(_clname);
 }
 
-int UserModel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+auto UserModel::qt_metacall(QMetaObject::Call _c, int _id, void **_a) -> int
 {
     _id = QObject::qt_metacall(_c, _id, _a);
     if (_id < 0)

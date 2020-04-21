@@ -12,7 +12,7 @@ public:
 
 signals:
   void signIn();
-  void onNameChanged(int value);
+  void onNameChanged(int _t1);
 
 public:
   void login(bool success);

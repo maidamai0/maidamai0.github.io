@@ -46,13 +46,13 @@ const std::string err_string[]{"MAPI SUCCESS", // 0
 } // namespace
 
 MapiClient::~MapiClient() {
-  if (mapi32dll) {
+  if (mapi32dll != nullptr) {
     FreeLibrary(mapi32dll);
     mapi32dll = nullptr;
   }
 }
 
-bool MapiClient::load_mapi_dll() {
+auto MapiClient::load_mapi_dll() -> bool {
   // load dll
   mapi32dll = LoadLibrary(mapi_dll_name.c_str());
   if (mapi32dll == nullptr) {
@@ -107,7 +107,7 @@ void MapiClient::SetBody(std::wstring&& body) noexcept {
   body_ = std::move(body);
 }
 
-int MapiClient::SendMail() {
+auto MapiClient::SendMail() -> int {
   if (!load_mapi_dll()) {
     return -1;
   }

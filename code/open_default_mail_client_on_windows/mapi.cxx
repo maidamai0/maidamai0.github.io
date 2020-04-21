@@ -133,7 +133,7 @@ auto main(int argc, char** argv) -> int {
         break;
     }
 
-    std::cout << "send result: " << error << std::endl;
+    std::cout << "send result: " << &error << std::endl;
 
     FreeLibrary(hMapiModule);
   }

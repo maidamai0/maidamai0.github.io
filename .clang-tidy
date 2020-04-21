@@ -1,5 +1,5 @@
 ---
-Checks:          'clang-diagnostic-*,clang-analyzer-*,-clang-analyzer-alpha*,modernize-*,performance-*,readability-*,-readability-braces-around-statements,-readability-named-parameter,-readability-convert-member-functions-to-static,-clang-diagnostic-error'
+Checks:          'clang-diagnostic-*,clang-analyzer-*,-clang-analyzer-alpha*,modernize-*,performance-*,readability-*,-readability-braces-around-statements,-readability-named-parameter,-readability-convert-member-functions-to-static,-clang-diagnostic-error --fix-errors --fix'
 WarningsAsErrors: ''
 AnalyzeTemporaryDtors: false
 CheckOptions:
