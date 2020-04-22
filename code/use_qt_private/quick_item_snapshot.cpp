@@ -1,11 +1,9 @@
 
 #include "quick_item_snapshot.h"
-#include <private/qtquickglobal_p.h>
 
-#include "qqml.h"
-#include "qquickitem.h"
-#include "qquickwindow.h"
-#include "qsize.h"
+#include <QQuickWindow>
+#include <QSize>
+#include <QtQml>
 
 #include <QtQml/QQmlEngine>
 #include <QtQml/QQmlInfo>
@@ -64,8 +62,8 @@ auto QuickItemSnapShotPrivate::create(QQuickItem* item)
   return result;
 }
 
-QuickItemSnapShot::QuickItemSnapShot(QQuickWidget* widget)
-  : QObject(*new QuickItemSnapShotPrivate, widget) {
+QuickItemSnapShot::QuickItemSnapShot()
+  : QObject(*new QuickItemSnapShotPrivate) {
 }
 
 void QuickItemSnapShot::setup() {

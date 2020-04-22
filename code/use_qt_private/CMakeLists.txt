@@ -9,7 +9,6 @@ set(CMAKE_AUTOUIC ON)
 
 set(QT5_COMPONENTS
     Core
-    Widgets
     Quick
     QuickWidgets
     Qml
@@ -18,9 +17,10 @@ set(QT5_COMPONENTS
 find_package(Qt5 COMPONENTS ${QT5_COMPONENTS} REQUIRED)
 
 foreach(LIB ${QT5_COMPONENTS})
-    include_directories(${Qt5${LIB}_PRIVATE_INCLUDE_DIRS}) # for private headers
     link_libraries(Qt5::${LIB})
 endforeach()
+
+include_directories(${Qt5Quick_PRIVATE_INCLUDE_DIRS}) # for private headers
 
 file(GLOB src "*.cpp")
 

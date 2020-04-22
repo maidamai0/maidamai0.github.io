@@ -1,14 +1,9 @@
 #pragma once
 
-#include <QPointer>
 #include <QQuickItem>
-#include <QQuickWidget>
+#include <QString>
 #include <QtCore/QObject>
-#include <QtCore/QSize>
-#include <QtCore/QUrl>
-#include <QtGui/QImage>
 #include <QtQml/QJSValue>
-#include <QtQuick/qtquickglobal.h>
 
 #include <iostream>
 #include <memory>
@@ -20,7 +15,7 @@ class QuickItemSnapShot final : public QObject {
   Q_OBJECT
   Q_DECLARE_PRIVATE(QuickItemSnapShot)
 public:
-  QuickItemSnapShot(QQuickWidget* widget = nullptr);
+  QuickItemSnapShot();
   ~QuickItemSnapShot() final = default;
 
   Q_INVOKABLE void
