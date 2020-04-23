@@ -7,10 +7,6 @@ public:
     return list_;
   }
 
-  [[nodiscard]] auto GetListByPointer() -> std::vector<int>* {
-    return &list_;
-  }
-
   void Print() const {
     fmt::print("list content is:\n");
     for (const auto& value : list_) {
@@ -58,10 +54,9 @@ auto main(int argc, char** argv) -> int {
   fmt::print("Reference type ");
   foo_reference_type.Print();
 
-  // pointer
-  Foo foo_ptr;
-  auto list_ptr = foo_ptr.GetListByPointer();
-  list_ptr->insert(list_ptr->end(), {4, 5, 6, 7});
-  fmt::print("Pointer ");
-  foo_ptr.Print();
+  // Temp
+  Foo foo_temp;
+  foo_temp.GetList().insert(foo_temp.GetList().end(), {4, 5, 6, 7});
+  fmt::print("Temp ");
+  foo_temp.Print();
 }
