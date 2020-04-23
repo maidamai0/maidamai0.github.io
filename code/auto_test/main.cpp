@@ -37,12 +37,26 @@ auto main(int argc, char** argv) -> int {
   fmt::print("Raw auto ");
   foo_raw.Print();
 
+  // raw type
+  Foo foo_raw_type;
+  std::vector<int> list_raw_type = foo_raw_type.GetList();
+  list_raw_type.insert(list_raw_type.end(), {4, 5, 6, 7});
+  fmt::print("Raw type ");
+  foo_raw_type.Print();
+
   // auto with referecne
   Foo foo_ref;
   auto& list_ref = foo_ref.GetList();
   list_ref.insert(list_ref.end(), {4, 5, 6, 7});
   fmt::print("Reference auto ");
   foo_ref.Print();
+
+  // raw type
+  Foo foo_reference_type;
+  std::vector<int>& list_reference_type = foo_reference_type.GetList();
+  list_reference_type.insert(list_reference_type.end(), {4, 5, 6, 7});
+  fmt::print("Reference type ");
+  foo_reference_type.Print();
 
   // pointer
   Foo foo_ptr;
