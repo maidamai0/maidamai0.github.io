@@ -4,3 +4,6 @@
 [submodule "code/dependencies/fmt"]
 	path = code/dependencies/fmt
 	url = https://github.com/fmtlib/fmt
+[submodule ".\\code\\dependencies\\time_measure"]
+	path = .\\code\\dependencies\\time_measure
+	url = git@github.com:maidamai0/time_measure.git
