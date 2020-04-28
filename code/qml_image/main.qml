@@ -8,16 +8,19 @@ Window {
     height: 768
 
     Rectangle {
+        id:rect
         anchors.centerIn: parent
-        width: parent.width/2
-        height: parent.height/2
-        Image {
-            // without this image will have unwanted size
+        width: parent.width * 0.9
+        height: parent.height * 0.9
+        ScrollView {
             anchors.fill: parent
-
-            // without thie, image might be cutted.
-            fillMode:Image.PreserveAspectFit
-            source:"qrc:image.jpg"
+            ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+            clip: true
+            Image {
+                width: rect.width
+                fillMode:Image.PreserveAspectFit
+                source:"qrc:image.jpg"
+            }
         }
     }
 }
