@@ -7,3 +7,6 @@
 [submodule "code/dependencies/time_measure"]
 	path = code/dependencies/time_measure
 	url = git@github.com:maidamai0/time_measure.git
+[submodule ".\\code\\dependencies\\magic_num"]
+	path = .\\code\\dependencies\\magic_num
+	url = https://github.com/Neargye/magic_enum.git
