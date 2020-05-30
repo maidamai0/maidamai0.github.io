@@ -13,6 +13,3 @@
 [submodule "code/dependencies/doctest"]
 	path = code/dependencies/doctest
 	url = https://github.com/onqtam/doctest.git
-[submodule "code/dependencies/docopt_cpp/docopt"]
-	path = code/dependencies/docopt_cpp/docopt
-	url = https://github.com/docopt/docopt.cpp.git
