@@ -16,3 +16,6 @@
 [submodule ".\\code\\dependencies\\docopt_cpp\\docopt"]
 	path = .\\code\\dependencies\\docopt_cpp\\docopt
 	url = https://github.com/docopt/docopt.cpp.git
+[submodule ".\\code\\dependencies\\time_measure"]
+	path = .\\code\\dependencies\\time_measure
+	url = https://github.com/maidamai0/time_measure.git
