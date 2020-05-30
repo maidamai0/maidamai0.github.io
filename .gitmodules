@@ -7,12 +7,12 @@
 [submodule "code/dependencies/time_measure"]
 	path = code/dependencies/time_measure
 	url = git@github.com:maidamai0/time_measure.git
-[submodule ".\\code\\dependencies\\magic_num"]
-	path = .\\code\\dependencies\\magic_num
+[submodule "code/dependencies/magic_num"]
+	path = code/dependencies/magic_num
 	url = https://github.com/Neargye/magic_enum.git
 [submodule "code/dependencies/doctest"]
 	path = code/dependencies/doctest
 	url = https://github.com/onqtam/doctest.git
-[submodule ".\\code\\dependencies\\docopt_cpp\\docopt"]
-	path = .\\code\\dependencies\\docopt_cpp\\docopt
+[submodule "code/dependencies/docopt_cpp/docopt"]
+	path = code/dependencies/docopt_cpp/docopt
 	url = https://github.com/docopt/docopt.cpp.git
