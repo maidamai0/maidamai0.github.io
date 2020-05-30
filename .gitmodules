@@ -10,12 +10,9 @@
 [submodule ".\\code\\dependencies\\magic_num"]
 	path = .\\code\\dependencies\\magic_num
 	url = https://github.com/Neargye/magic_enum.git
-[submodule ".\\code\\dependencies\\doctest"]
-	path = .\\code\\dependencies\\doctest
+[submodule "code/dependencies/doctest"]
+	path = code/dependencies/doctest
 	url = https://github.com/onqtam/doctest.git
-[submodule ".\\code\\dependencies\\docopt"]
-	path = .\\code\\dependencies\\docopt
-	url = https://github.com/docopt/docopt.cpp.git
 [submodule ".\\code\\dependencies\\docopt_cpp\\docopt"]
 	path = .\\code\\dependencies\\docopt_cpp\\docopt
 	url = https://github.com/docopt/docopt.cpp.git
