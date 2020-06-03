@@ -11,6 +11,7 @@
  *
  */
 
+#include <cstdlib>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -23,30 +24,37 @@ constexpr auto hashFnv1b(const char* s, unsigned int fnv1a_basis = 0x811c9dc5, u
                        static_cast<unsigned int>((fnv1a_basis ^ *s) * static_cast<unsigned long long>(fnv1a_prime)));
 }
 
+constexpr auto operator"" _cshash(const char* str, std::size_t len) {
+  return hashFnv1b(str);
+}
+
 void test(std::string key_str) {
   const auto key = hashFnv1b(key_str.c_str());
   switch (key) {
-    case hashFnv1b("first"): {
+    case "first"_cshash: {
       std::cout << "first" << std::endl;
       break;
     }
-    case hashFnv1b("second"): {
+    case "second"_cshash: {
       std::cout << "second" << std::endl;
       break;
     }
-    case hashFnv1b("third"): {
+    case "third"_cshash: {
       std::cout << "third" << std::endl;
       break;
     }
-    case hashFnv1b("fourth"): {
+    case "fourth"_cshash: {
       std::cout << "fourth" << std::endl;
       break;
     }
+    case "fsfsafsaf"_cshash:
     default: {
       std::cout << "default" << std::endl;
     }
   }
 }
+
+// used for side-effects
 
 auto main() -> int {
   std::vector<std::string> ss{"first", "second", "third", "fourth"};
