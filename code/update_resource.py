@@ -36,7 +36,7 @@ def traverseDirectory(dir, root):
             file_path = os.path.join(r, file)
             file_path = file_path.replace('\\', '/')
             file_path = file_path[len(dir)+1:]
-            if file_path.endswith(".qml") | file_path.endswith(".jpg"):
+            if file_path.endswith(".qml") | file_path.endswith(".jpg") | file_path.endswith(".png"):
                 files.append(file_path)
 
     for f in files:
