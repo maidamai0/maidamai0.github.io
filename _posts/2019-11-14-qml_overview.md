@@ -16,6 +16,11 @@ Qt Quick module is the standard library for writing for QML applications,Providi
 
 Qt Quick Control module provides a set of controls can be used to build complete interface in Qt Quick.
 
+## Qt Quick1 vs Qt Quick2
+
+* Qt Quick1 use QGraphicsView and QPainter
+* Qt Quick1 use QWindow and QOpenGL which involves QSceneGraph
+
 ## Debug tools
 
 ### Test
@@ -269,6 +274,64 @@ QAbstractItemModel is the interface of all models.
 
 ## Scene graph
 
+### Render flow
+
+```plantuml
+@startuml
+: QML Components;
+: QtQuickItems;
+: QSGNodes;
+: SceneGraph Renderer;
+: OpenGL Commands;
+@enduml
+```
+![](http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuR9I2FJrKN3Epot8pqlDAocs1ecK19Pc9cTxbgJcGlZ1xdxvAQbWTd1oQbwgUr5YGOP2K6fUIcfHQX58sByWDSyTR4vkObuAKAK3K19eFW00)
+
+### Important classes used
+
+```plantuml
+@startuml
+class QSGNode
+note left: base class of all scene graph
+class QSGGeometryNode {
+  QSGGeometry geometry
+  QSGMaterial meterial
+}
+note right: Base clsss for all rendered content
+class QSGClipNode
+class QSGOpacityNode
+class QSGTransformNode
+
+QSGNode <-- QSGBasicGeometryNode
+QSGNode <-- QSGOpacityNode
+QSGNode <-- QSGRenderNode
+QSGNode <-- QSGTransformNode
+QSGBasicGeometryNode <-- QSGGeometryNode
+QSGBasicGeometryNode <-- QSGClipNode
+
+QSGGeometryNode <--- QSGImageNode
+QSGGeometryNode <--- QSGRectangleNode
+QSGGeometryNode <--- QSGSimpleRectNode
+note bottom: deprecated, use QSGRectangleNode
+QSGGeometryNode <--- QSGSimpleTextureNode
+note bottom: deprecated, use QSGImageNode
+
+QSGGeometryNode o-- QSGGeometry
+QSGGeometryNode o-- QSGMaterial 
+QSGMaterial <-- QSGFlatColorMaterial
+QSGMaterial <-- QSGOpaqueTextureMaterial
+QSGMaterial <-- QSGSimpleMaterial
+QSGMaterial <-- QSGVertexColorMaterial
+@enduml
+```
+![](http://www.plantuml.com/plantuml/svg/bPBDRi8m48JlUOfzWF82g0TKfA8Usgg0Ub-SIOZadtIzaK1Ltxq4WqnQIDMRC_Dvn-Euc4LbqSxPmbYEaTvMYvTGel11GHQLJcd34PJSK15RIz70WshXTfktBH0SLFRzTleiw5AZ-hH8yZChf65B3cbHVAL0QUhj8V4X9SOOgGfoZ1Ju4eAIJF0AhpbtRfkspypAQykcqVrGN0lxM0LnHxauzQJxoQHt3ucDkMmm0FBCQzRoUBHhpZ3pTqmcipOEvhOzzGD8n9FZ6hroarZ2AFlQZbEhnhKMFPiVn2Qe1ZUb4gt0iAAyeoxYlqFNs6ad-7DkhdErSHZUtGq_lxRYukDydu-MTHviaBCnWFBF_-ZEfnu3KxqnuXsYs0qJP_1bv-mt)
+
+### How to add custom node to scene graph
+
+1. Create a custom class subclassing `QQuickItem`
+2. Set flag with `setFlag(ItemHasContents)`
+3. Override `QQuickItem::updatePaintNode()`, use `QSGNode::*ChildNode()`
+
 ## Frame graph
 
 ## 3D
@@ -303,3 +366,5 @@ iterate qml in c++
 * [Important Concepts In Qt Quick - Positioning](https://doc.qt.io/qt-5/qtquick-positioning-topic.html)
 * [Models and Views in Qt Quick](https://doc-snapshots.qt.io/qt5-dev/qtquick-modelviewsdata-modelview.html)
 * [Model View Programming](https://doc.qt.io/qt-5/model-view-programming.html)
+* [Scene Graph](https://doc.qt.io/qt-5/qtquick-visualcanvas-scenegraph.html)
+* [Scene Grapth Custom geometry](https://doc.qt.io/qt-5/qtquick-scenegraph-customgeometry-example.html)
