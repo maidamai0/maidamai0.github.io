@@ -5,9 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 option(USE_CLANG_TIDY "If use Clang-tidy" ON)
 
-if(WIN32)
-    set(CMAKE_GENERATOR "NMake Makefiles")
-endif(WIN32)
+set(CMAKE_GENERATOR "Ninja")
 
 include(cmake-qmlplugin/QmlPlugin.cmake)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
