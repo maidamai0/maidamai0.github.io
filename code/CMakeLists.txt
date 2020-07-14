@@ -1,21 +1,19 @@
 # dependencies
 add_compile_definitions(DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN)
-add_subdirectory(dependencies/fmt)
-add_subdirectory(dependencies/time_measure)
-add_subdirectory(dependencies/docopt_cpp/docopt)
-set(depends 
-  fmt/include
+
+find_package(doctest CONFIG REQUIRED)
+find_package(fmt CONFIG REQUIRED)
+find_package(docopt CONFIG REQUIRED)
+find_package(magic_enum CONFIG REQUIRED)
+link_libraries(docopt_s fmt::fmt-header-only doctest::doctest magic_enum::magic_enum)
+
+set(depends
   time_measure/include
-  doctest
-  docopt_cpp
 )
 foreach(dep ${depends})
   message(STATUS "include path ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/${dep}")
   include_directories(${CMAKE_CURRENT_SOURCE_DIR}/dependencies/${dep})
 endforeach()
-link_libraries(fmt::fmt)
-link_libraries(time_measurement)
-link_libraries(docopt_s)
 
 # get subdir
 # https://stackoverflow.com/questions/7787823/cmake-how-to-get-the-name-of-all-subdirectories-of-a-directory
