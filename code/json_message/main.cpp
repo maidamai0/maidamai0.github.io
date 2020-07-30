@@ -1,5 +1,6 @@
 #include "doctest/doctest.h"
 #include "fmt/format.h"
+#include "json_message.h"
 #include "rapidjson/prettywriter.h"
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/writer.h"
@@ -28,7 +29,7 @@
 using PrettyJsonWriter = rapidjson::PrettyWriter<rapidjson::StringBuffer>;
 using JsonWriter = rapidjson::Writer<rapidjson::StringBuffer>;
 
-class JsonMessage {
+class JsonMsg {
 public:
   // first level array
   void AddArray(const std::string& val) {
@@ -169,57 +170,12 @@ private:
   std::string object_key_key3_;
 };
 
-TEST_CASE("leveled") {
-  SUBCASE("full") {
-    JsonMessage msg;
-
-    for (const auto* val : {"first", "second", "third"}) {
-      msg.AddArray(val);
-    }
-
-    msg.SetKey1("value1");
-    msg.SetKey2("value2");
-
-    msg.SetObjectKeyKey1("ValueObjectKeyKey1");
-    msg.SetObjectKeyKey2("ValueObjectKeyKey2");
-    msg.SetKey3("ValueObjectKeyKey3");
-
-    fmt::print("leveld_full:\n{}\n", msg.OriginalJson());
-    fmt::print("{}\n\n", msg.OriginalJson<JsonWriter>());
-    std::fflush(stdout);
-  }
-
-  SUBCASE("no array") {
-    JsonMessage msg;
-
-    msg.SetKey1("value1");
-    msg.SetKey2("value2");
-
-    msg.SetObjectKeyKey1("ValueObjectKeyKey1");
-    msg.SetObjectKeyKey2("ValueObjectKeyKey2");
-    msg.SetKey3("ValueObjectKeyKey3");
-
-    fmt::print("leveld_no_array:\n{}\n\n", msg.OriginalJson());
-    std::fflush(stdout);
-  }
-
-  SUBCASE("no inner object") {
-    JsonMessage msg;
-
-    for (const auto* val : {"first", "second", "third"}) {
-      msg.AddArray(val);
-    }
-
-    msg.SetKey1("value1");
-    msg.SetKey2("value2");
-
-    fmt::print("leveld_no_inner_object:\n{}\n\n", msg.OriginalJson());
-    std::fflush(stdout);
-  }
+auto TestName() {
+  return doctest::detail::g_cs->currentTest->m_name;
 }
 
-TEST_CASE("flatted") {
-  JsonMessage msg;
+TEST_CASE("level full") {
+  JsonMsg msg;
 
   for (const auto* val : {"first", "second", "third"}) {
     msg.AddArray(val);
@@ -232,7 +188,93 @@ TEST_CASE("flatted") {
   msg.SetObjectKeyKey2("ValueObjectKeyKey2");
   msg.SetKey3("ValueObjectKeyKey3");
 
-  fmt::print("flatted:\n{}\n", msg.FlatJson());
+  fmt::print("{}:\n{}\n", TestName(), msg.OriginalJson());
+  fmt::print("{}\n\n", msg.OriginalJson<JsonWriter>());
+  std::fflush(stdout);
+}
+
+TEST_CASE("level no array") {
+  JsonMsg msg;
+
+  msg.SetKey1("value1");
+  msg.SetKey2("value2");
+
+  msg.SetObjectKeyKey1("ValueObjectKeyKey1");
+  msg.SetObjectKeyKey2("ValueObjectKeyKey2");
+  msg.SetKey3("ValueObjectKeyKey3");
+
+  fmt::print("{}:\n{}\n", TestName(), msg.OriginalJson());
+  std::fflush(stdout);
+}
+
+TEST_CASE("level no inner object") {
+  JsonMsg msg;
+
+  for (const auto* val : {"first", "second", "third"}) {
+    msg.AddArray(val);
+  }
+
+  msg.SetKey1("value1");
+  msg.SetKey2("value2");
+
+  fmt::print("{}:\n{}\n", TestName(), msg.OriginalJson());
+  std::fflush(stdout);
+}
+
+TEST_CASE("flatted") {
+  JsonMsg msg;
+
+  for (const auto* val : {"first", "second", "third"}) {
+    msg.AddArray(val);
+  }
+
+  msg.SetKey1("value1");
+  msg.SetKey2("value2");
+
+  msg.SetObjectKeyKey1("ValueObjectKeyKey1");
+  msg.SetObjectKeyKey2("ValueObjectKeyKey2");
+  msg.SetKey3("ValueObjectKeyKey3");
+
+  fmt::print("{}:\n{}\n", TestName(), msg.FlatJson());
   fmt::print("{}\n\n", msg.FlatJson<JsonWriter>());
+  std::fflush(stdout);
+}
+
+TEST_CASE("JsonGenerate full") {
+  JsonMessage msg;
+  msg.SetKey1("value1");
+  msg.SetKey2("value2");
+  msg.SetKey3("value3");
+  msg.SetKey4("value4");
+  msg.SetKey5("value5");
+
+  msg.AddArrayKey1("arrayValue1");
+  msg.AddArrayKey1("arrayValue2");
+  msg.AddArrayKey1("arrayValue3");
+  msg.AddArrayKey1("arrayValue4");
+  msg.AddArrayKey1("arrayValue5");
+
+  msg.SetObjectKey1Key1("objectvalue1");
+  msg.SetObjectKey1Key2("objectvalue2");
+
+  fmt::print("{}:\n{}\n\n", TestName(), msg.ToJson());
+  std::fflush(stdout);
+}
+
+TEST_CASE("JsonGenerate no inner objecet") {
+  JsonMessage msg;
+  msg.SetKey1("value1");
+  msg.SetKey2("value2");
+  msg.SetKey3("value3");
+  msg.SetKey4("value4");
+  msg.SetKey5("value5");
+
+  msg.AddArrayKey1("arrayValue1");
+  msg.AddArrayKey1("arrayValue2");
+  msg.AddArrayKey1("arrayValue3");
+  msg.AddArrayKey1("arrayValue4");
+  msg.AddArrayKey1("arrayValue5");
+
+  fmt::print("{}:\n{}\n\n", TestName(), msg.ToJson());
   std::fflush(stdout);
 }
