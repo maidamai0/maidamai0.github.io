@@ -112,7 +112,7 @@ public:
   }
 
   template <typename WriterType = PrettyJsonWriter>
-  [[nodiscard]] auto FlatJosn() const -> std::string {
+  [[nodiscard]] auto FlatJson() const -> std::string {
     using namespace rapidjson;
     StringBuffer buffer;
     WriterType writer(buffer);
@@ -232,7 +232,7 @@ TEST_CASE("flatted") {
   msg.SetObjectKeyKey2("ValueObjectKeyKey2");
   msg.SetKey3("ValueObjectKeyKey3");
 
-  fmt::print("flatted:\n{}\n", msg.FlatJosn());
-  fmt::print("{}\n\n", msg.FlatJosn<JsonWriter>());
+  fmt::print("flatted:\n{}\n", msg.FlatJson());
+  fmt::print("{}\n\n", msg.FlatJson<JsonWriter>());
   std::fflush(stdout);
 }
