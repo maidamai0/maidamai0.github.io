@@ -1,10 +1,27 @@
 #include "fmt/core.h"
 #include "fmt/format.h"
+#include "magic_enum.hpp"
+
 #include <charconv>
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
 #include <string_view>
+#include <variant>
+
+enum class EnumTest { Prefix_First, PRefix_Second_element };
+
+auto get_name(EnumTest e) {
+  auto s = magic_enum::enum_name(e);
+  auto str = std::string(s.substr(7, s.size()));
+  for (auto& c : str) {
+    if (c == '_') {
+      c = ' ';
+    }
+  }
+
+  return str;
+}
 
 auto main(int argc, char** argv) -> int {
   constexpr auto date = std::string_view(__DATE__);
@@ -68,12 +85,15 @@ auto main(int argc, char** argv) -> int {
 
   char ts[MAX_PATH] = {0};
   sprintf_s(ts, "%02d/%02d/%02d", day_digit, month_digit, year_digit);
-  fmt::print("ts is [{}]", ts);
+  fmt::print("ts is [{}]\n", ts);
   std::fflush(stdout);
 
   // constexpr auto year_digit = (year[2] - '0') * 10 + (year[3] - '0');
   // constexpr auto month_digit = get_month_digit(year);
   // constexpr auto day_digit =
+
+  fmt::print("{}\n", get_name(EnumTest::Prefix_First));
+  fmt::print("{}\n", get_name(EnumTest::PRefix_Second_element));
 
   return 0;
 }
