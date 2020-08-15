@@ -1,0 +1,45 @@
+{
+    "$id": "http://maidamai0.github.com/schemas/example.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "json schema test",
+    "properties": {
+        "key1": {
+            "type": "string",
+            "description": "?"
+        },
+        "key2": {
+            "type": "string",
+            "description": "?"
+        },
+        "key3": {
+            "type": "string",
+            "description": "?"
+        },
+        "key4": {
+            "type": "string"
+        },
+        "key5": {
+            "type": "string",
+            "description": "vs software?"
+        },
+        "key6": {
+            "type": "string",
+            "description": "?"
+        },
+        "object_key1": {
+            "type": "object",
+            "description": "example of how to add a objct",
+            "properties": {
+                "key1": {
+                    "type": "string"
+                },
+                "key2": {
+                    "type": "string"
+                }
+            }
+        },
+        "array_key1": {
+            "type": "array"
+        }
+    }
+}
