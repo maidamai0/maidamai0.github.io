@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 # Steps of crash dump analysis with windbg
 
 ## .exr -1

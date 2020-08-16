@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 # Video basic concepts
 
 Each video file contains two elements:
