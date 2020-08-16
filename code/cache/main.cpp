@@ -1,14 +1,14 @@
-#include "vector"
+#include <array>
 #include <iostream>
 
 #define ANKERL_NANOBENCH_IMPLEMENT
 #include <nanobench.h>
 
-constexpr auto cache_size = 3276;
-using MatrixType = std::vector<std::vector<int>>;
+constexpr auto cache_size = 3'000;
+using MatrixType = std::array<std::array<int, cache_size>, cache_size>;
 
 auto cache() {
-  MatrixType matrix(cache_size, std::vector<int>(cache_size, 0));
+  MatrixType matrix{};
   auto counter = 0;
   for (auto i = 0; i < cache_size; ++i) {
     for (auto j = 0; j < cache_size; ++j) {
@@ -20,7 +20,7 @@ auto cache() {
 }
 
 auto cache_thrashing() {
-  MatrixType matrix(cache_size, std::vector<int>(cache_size, 0));
+  MatrixType matrix{};
   auto counter = 0;
   for (auto i = 0; i < cache_size; ++i) {
     for (auto j = 0; j < cache_size; ++j) {
@@ -32,6 +32,6 @@ auto cache_thrashing() {
 }
 
 auto main(int argc, char** argv) -> int {
-  ankerl::nanobench::Bench().run("cache thrashing", cache);
+  ankerl::nanobench::Bench().run("cache", cache);
   ankerl::nanobench::Bench().run("cache thrashing", cache_thrashing);
 }

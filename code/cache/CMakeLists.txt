@@ -8,5 +8,6 @@ find_path(NANOBENCH_INCLUDE_DIRS "nanobench.h")
 include_directories(${NANOBENCH_INCLUDE_DIRS})
 
 file(GLOB src "*.cpp")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /STACK:50000000")
 
 add_executable(${TARGET} ${src})
