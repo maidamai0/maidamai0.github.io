@@ -59,6 +59,15 @@ img {
   vertical-align: middle;
 }
 
+#important-classes-used + p {
+  text-align: center;
+}
+
+img[src$="1bv-mt"] {
+  vertical-align: middle;
+  margin: 0 -100%;
+  width: auto;
+ }
 
 
 /**
