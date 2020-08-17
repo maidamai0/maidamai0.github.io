@@ -2,6 +2,9 @@
 layout: post
 ---
 
+
+In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+
 # Overview of QML language
 
 In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.

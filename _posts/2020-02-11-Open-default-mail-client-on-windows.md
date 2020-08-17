@@ -2,6 +2,8 @@
 layout: post
 ---
 
+In this article I will introduce 3 ways to open mail client on windows:
+
 # Open a default mail client on windows10
 
 In this article I will introduce 3 ways to open mail client on windows:

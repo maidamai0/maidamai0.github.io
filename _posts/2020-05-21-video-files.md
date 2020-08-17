@@ -2,6 +2,8 @@
 layout: post
 ---
 
+Introduce some basics about video.
+
 # Video basic concepts
 
 Each video file contains two elements:
