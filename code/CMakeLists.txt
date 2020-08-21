@@ -15,6 +15,8 @@ foreach(dep ${depends})
   include_directories(${CMAKE_CURRENT_SOURCE_DIR}/dependencies/${dep})
 endforeach()
 
+add_compile_definitions(ASSETS_PATH="${CMAKE_CURRENT_SOURCE_DIR}/../assets")
+
 # get subdir
 # https://stackoverflow.com/questions/7787823/cmake-how-to-get-the-name-of-all-subdirectories-of-a-directory
 MACRO(SUBDIRLIST result curdir)
