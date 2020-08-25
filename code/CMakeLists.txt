@@ -7,13 +7,9 @@ find_package(docopt CONFIG REQUIRED)
 find_package(magic_enum CONFIG REQUIRED)
 link_libraries(docopt_s fmt::fmt doctest::doctest magic_enum::magic_enum)
 
-set(depends
-  time_measure/include
-)
-foreach(dep ${depends})
-  message(STATUS "include path ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/${dep}")
-  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/dependencies/${dep})
-endforeach()
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/dependencies/time_measure)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/dependencies/time_measure/include)
+link_libraries(time_measurement)
 
 add_compile_definitions(ASSETS_PATH="${CMAKE_CURRENT_SOURCE_DIR}/../assets")
 
