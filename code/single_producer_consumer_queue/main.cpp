@@ -1,3 +1,4 @@
+#include "doctest/doctest.h"
 #include "fmt/core.h"
 #include "fmt/format.h"
 #include "producer_consumer_queue.hpp"
@@ -24,27 +25,26 @@ int64_t sum_consume = 0;
 auto consumer() {
   while (!quit) {
     const auto v = queue.Pop();
-    print("consume: {}\n", v);
+    // print("consume: {}\n", v);
     sum_consume += v;
   }
 }
 
 auto producer() {
-  for (int i = 0; i < 1000; ++i) {
+  for (int i = 0; i < 100000; ++i) {
     queue.Push(i);
     sum_produce += i;
   }
 }
 
-auto main(int argc, char** argv) -> int {
+TEST_CASE("int") {
   auto c = std::thread(consumer);
   auto p = std::thread(producer);
   p.join();
 
   using namespace std::chrono_literals;
-  std::this_thread::sleep_for(2s);
-  print("sum_produce is {}, sum_consumer is {},equal? {}", sum_produce, sum_consume, sum_produce == sum_consume);
+  std::this_thread::sleep_for(5s);
+  print("sum_produce is {}, sum_consumer is {}\n", sum_produce, sum_consume);
   c.detach();
-
-  return 0;
+  CHECK(sum_produce == sum_consume);
 }
