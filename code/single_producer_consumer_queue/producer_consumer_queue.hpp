@@ -31,8 +31,10 @@ public:
   }
 
   void Push(value_type v) {
-    std::unique_lock<std::mutex> lock{mtx_};
-    data_.push_back(v);
+    {
+      std::unique_lock<std::mutex> lock{mtx_};
+      data_.push_back(v);
+    }
     cv_.notify_one();
   }
 

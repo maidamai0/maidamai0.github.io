@@ -31,7 +31,7 @@ auto consumer() {
 }
 
 auto producer() {
-  for (int i = 0; i < 100000; ++i) {
+  for (int i = 0; i < 100'000; ++i) {
     queue.Push(i);
     sum_produce += i;
   }
