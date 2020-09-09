@@ -1,7 +1,9 @@
+#include "sstream"
 #include <fstream>
 #include <ios>
 #include <iostream>
 #include <ostream>
+#include <sstream>
 #include <string>
 
 auto write(std::ostream& of, std::string&& content) {
@@ -28,5 +30,24 @@ auto main(int argc, char** argv) -> int {
 
   for (int i = 0; i < 5; ++i) {
     write(of, R"({"number":)" + std::to_string(i) + '}');
+  }
+
+  {
+    std::stringstream ss(" fjdf");
+    char c = ss.peek();
+    std::cout << "peek:" << c << std::endl;
+  }
+
+  {
+    std::stringstream ss(" fjdf");
+    char c = ss.get();
+    std::cout << "get:" << c << std::endl;
+  }
+
+  {
+    std::istringstream ss(" fjdf");
+    char c;
+    ss >> c;
+    std::cout << "<<:" << c << std::endl;
   }
 }
