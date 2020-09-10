@@ -13,6 +13,12 @@ link_libraries(time_measurement)
 
 add_compile_definitions(ASSETS_PATH="${CMAKE_CURRENT_SOURCE_DIR}/../assets")
 
+if(MSVC)
+  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
+  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
+endif()
+
+
 # get subdir
 # https://stackoverflow.com/questions/7787823/cmake-how-to-get-the-name-of-all-subdirectories-of-a-directory
 MACRO(SUBDIRLIST result curdir)
