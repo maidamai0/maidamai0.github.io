@@ -7,9 +7,10 @@
 
 namespace message {
 class Sender final {
+public:
   Sender() = default;
 
-  Sender(std::unique_ptr<Queue>&& queue) : queue_{std::move(queue)} {
+  explicit Sender(std::weak_ptr<Queue>&& queue) : queue_{std::move(queue)} {
   }
 
   template <typename MsgType>
@@ -19,6 +20,6 @@ class Sender final {
   }
 
 private:
-  std::unique_ptr<Queue> queue_;
+  std::weak_ptr<Queue> queue_;
 };
 } // namespace message
