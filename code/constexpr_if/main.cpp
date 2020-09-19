@@ -85,8 +85,8 @@ public:
     return widget_->call_common();
   }
 
-  // use [constexpr if statement](https://en.cppreference.com/w/cpp/language/if#Constexpr_If) to select different method
-  // at compile time. c++17 supported compiler needed.
+  // use [constexpr if statement](https://en.cppreference.com/w/cpp/language/if#Constexpr_If)
+  // to select different method at compile time. c++17 supported compiler needed.
   auto CallCommonDifferent() {
     if constexpr (is_ogl) {
       return widget_->call_common_ogl();
