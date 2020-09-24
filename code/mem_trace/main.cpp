@@ -15,7 +15,7 @@ auto operator new(size_t size) -> void* {
   return malloc(size);
 }
 
-auto operator delete(void* p, size_t size) -> void {
+auto operator delete(void* p, size_t size) noexcept -> void {
   {
     std::lock_guard<std::mutex> lock(mtx);
     // std::cout << "Freeing " << size << " bytes\n";
@@ -24,7 +24,7 @@ auto operator delete(void* p, size_t size) -> void {
   free(p);
 }
 
-auto operator delete(void* p) -> void {
+auto operator delete(void* p) noexcept -> void {
   {
     std::lock_guard<std::mutex> lock(mtx);
     // std::cout << "Freeing " << size << " bytes\n";
