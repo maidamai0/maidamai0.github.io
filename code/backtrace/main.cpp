@@ -22,7 +22,7 @@ auto print_stack_trace() -> int {
   HANDLE process = GetCurrentProcess();
   SymInitialize(process, nullptr, TRUE);
 
-  const auto frames_num = RtlCaptureStackBackTrace(0, trace_max_stack_frames, addresses.data(), nullptr);
+  const auto frames_num = RtlCaptureStackBackTrace(1, trace_max_stack_frames, addresses.data(), nullptr);
 
   auto* symbol = (SYMBOL_INFO*) malloc(sizeof(SYMBOL_INFO) + (trace_max_function_name_length - 1) * sizeof(TCHAR));
   symbol->MaxNameLen = trace_max_function_name_length;
