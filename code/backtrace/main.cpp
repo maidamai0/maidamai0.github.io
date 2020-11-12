@@ -19,7 +19,7 @@ constexpr auto trace_max_function_name_length = 1024;
 auto print_stack_trace() -> int {
   std::array<void*, trace_max_stack_frames> addresses;
 
-  HANDLE process = GetCurrentProcess();
+  auto* const process = GetCurrentProcess();
   SymInitialize(process, nullptr, TRUE);
 
   const auto frames_num = RtlCaptureStackBackTrace(1, trace_max_stack_frames, addresses.data(), nullptr);
@@ -39,6 +39,9 @@ auto print_stack_trace() -> int {
       fmt::print("{}, {:#x}\n", symbol->Name, symbol->Address);
     }
   }
+
+  free(symbol);
+  free(line);
   return 0;
 }
 
