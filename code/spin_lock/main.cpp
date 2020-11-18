@@ -1,5 +1,6 @@
 #include <array>
 #include <atomic>
+#include <chrono>
 #include <mutex>
 #include <thread>
 
@@ -18,10 +19,10 @@ public:
 
   void lock() {
     while (lock_.test_and_set()) {
-      std::this_thread::yield(); // speed up test
       // spin
     }
   }
+
   void unlock() {
     lock_.clear();
   }
@@ -33,19 +34,28 @@ private:
   std::atomic_flag lock_ = ATOMIC_FLAG_INIT;
 };
 
+SpinLock lock;
+
+void add(int& sum, const bool need_lock = false) {
+  for (auto cnt = 0; cnt < worker_num; ++cnt) {
+    if (need_lock) {
+      std::lock_guard<SpinLock> guard(lock);
+      ++sum;
+    } else {
+      ++sum;
+    }
+
+    std::this_thread::sleep_for(std::chrono::microseconds(1));
+  }
+}
+
 TEST_CASE("no lock") {
   auto sum = 0;
   std::vector<std::thread> workers;
 
   workers.reserve(worker_num);
   for (auto i = 0; i < worker_num; ++i) {
-    workers.emplace_back(std::thread([&sum] {
-      for (auto cnt = 0; cnt < worker_num; ++cnt) {
-        using namespace std::chrono_literals;
-        ++sum;
-        std::this_thread::sleep_for(1us);
-      }
-    }));
+    workers.emplace_back(std::thread([&sum] { add(sum); }));
   }
 
   for (auto& worker : workers) {
@@ -58,18 +68,10 @@ TEST_CASE("no lock") {
 TEST_CASE("spin lock") {
   auto sum = 0;
   std::vector<std::thread> workers;
-  SpinLock lock;
 
   workers.reserve(worker_num);
   for (auto i = 0; i < worker_num; ++i) {
-    workers.emplace_back(std::thread([&sum, &lock] {
-      for (auto cnt = 0; cnt < worker_num; ++cnt) {
-        std::lock_guard<SpinLock> guard(lock);
-        using namespace std::chrono_literals;
-        ++sum;
-        std::this_thread::sleep_for(1us);
-      }
-    }));
+    workers.emplace_back(std::thread([&sum] { add(sum, true); }));
   }
 
   for (auto& worker : workers) {
