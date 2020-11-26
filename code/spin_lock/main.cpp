@@ -18,13 +18,14 @@ public:
   ~SpinLock() = default;
 
   void lock() {
-    while (lock_.test_and_set()) {
-      // spin
+    while (lock_.test_and_set(std::memory_order_acquire)) {
+      // sacrifice some performance to save power
+      std::this_thread::yield();
     }
   }
 
   void unlock() {
-    lock_.clear();
+    lock_.clear(std::memory_order_release);
   }
 
   SpinLock(const SpinLock&) = delete;
