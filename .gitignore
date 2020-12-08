@@ -8,3 +8,6 @@ build
 compile_commands.json
 clangd_trace.json
 *json_message.h
+*memory_usage.h
+memory_usage.json
+*.csv

@@ -7,6 +7,9 @@ project(${TARGET} CXX)
 find_path(NANOBENCH_INCLUDE_DIRS "nanobench.h")
 include_directories(${NANOBENCH_INCLUDE_DIRS})
 
+find_package(nlohmann_json CONFIG REQUIRED)
+link_libraries(nlohmann_json nlohmann_json::nlohmann_json)
+
 file(GLOB src "*.cpp")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /STACK:50000000")
 
