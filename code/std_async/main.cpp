@@ -13,6 +13,20 @@ auto sleep(const std::chrono::seconds secs) -> void {
   return std::this_thread::sleep_for(secs);
 }
 
+class print_guard {
+public:
+  print_guard(std::string&& message) : message_(message) {
+    fmt::print("enter {}\n", message_);
+  }
+
+  ~print_guard() {
+    fmt::print("leave {}\n", message_);
+  }
+
+private:
+  const std::string message_;
+};
+
 auto sleep_for_1_second() {
   sleep(1_s);
   fmt::print("leave {}\n", __FUNCTION__);
@@ -67,6 +81,11 @@ auto pass_future(std::future<std::string> f) {
   fmt::print("leave {}\n", __FUNCTION__);
 }
 
+auto return_void_future() {
+  print_guard guard(std::string("__FUNCTIONW__"));
+  return std::async(std::launch::async, sleep_for_1_second);
+}
+
 auto main(int argc, char** argv) -> int {
   const auto gap = []() {
     sleep(1_s);
@@ -89,5 +108,10 @@ auto main(int argc, char** argv) -> int {
   gap();
 
   pass_future(std::async(std::launch::async, sleep_for_1_second));
+  gap();
+
+  auto ft = return_void_future();
+  ft.get();
+  fmt::print("return void future\n");
   gap();
 }
