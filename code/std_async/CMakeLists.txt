@@ -6,3 +6,4 @@ project(${TARGET} CXX)
 file(GLOB src "*.cpp")
 
 add_executable(${TARGET} ${src})
+link_libraries(fmt::fmt-header-only)

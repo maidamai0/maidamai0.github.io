@@ -82,7 +82,7 @@ auto pass_future(std::future<std::string> f) {
 }
 
 auto return_void_future() {
-  print_guard guard(std::string("__FUNCTIONW__"));
+  print_guard guard(__FUNCTION__);
   return std::async(std::launch::async, sleep_for_1_second);
 }
 
@@ -112,6 +112,8 @@ auto main(int argc, char** argv) -> int {
 
   auto ft = return_void_future();
   ft.get();
-  fmt::print("return void future\n");
+  fmt::print("get from return_void_future\n");
   gap();
+
+  std::getchar();
 }
