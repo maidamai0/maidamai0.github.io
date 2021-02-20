@@ -1,0 +1,13 @@
+{
+  "name": "deps",
+  "version-string": "0.0.1",
+  "dependencies": [
+    "fmt",
+    "doctest",
+    "docopt",
+    "magic-enum",
+    "nlohmann-json",
+    "rapidjson",
+    "nanobench"
+  ]
+}
