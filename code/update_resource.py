@@ -49,5 +49,5 @@ if __name__ == '__main__':
         print(f"invalid arguments")
         exit
 
-    print(f"updating {sys.argv[1]}")
+    print(f"-- updating {sys.argv[1]}")
     createResource(sys.argv[1])

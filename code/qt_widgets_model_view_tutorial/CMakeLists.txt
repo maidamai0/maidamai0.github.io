@@ -5,20 +5,20 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(QT5_COMPONENTS
+set(Qt6_COMPONENTS
     Core 
     Gui
     Widgets
 )
 
-find_package(Qt5 COMPONENTS  ${QT5_COMPONENTS} REQUIRED)
+find_package(Qt6 COMPONENTS  ${Qt6_COMPONENTS} REQUIRED)
 
 file(GLOB src "*.cpp")
 file(GLOB hdr "*.h")
 
 add_executable(${PROJECT_NAME} ${src} ${hdr})
 
-foreach(LIB ${QT5_COMPONENTS})
-    target_link_libraries(${PROJECT_NAME} Qt5::${LIB})
+foreach(LIB ${Qt6_COMPONENTS})
+    target_link_libraries(${PROJECT_NAME} Qt6::${LIB})
 endforeach()
 
