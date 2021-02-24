@@ -11,3 +11,4 @@ clangd_trace.json
 *memory_usage.h
 memory_usage.json
 *.csv
+.cache
