@@ -18,5 +18,12 @@ auto main(int argc, char** argv) -> int {
 
   print(ansi);
   print(unicode);
+
+  std::string ss = u8"我";
+  // std::wstring ws = u"我";
+
+  std::wcout << "string length : " << ss.length() << std::endl;
+  // std::wcout << "wstring length: " << ws.length() << std::endl;
+
   return 0;
 }
