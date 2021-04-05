@@ -5,7 +5,7 @@ find_package(doctest CONFIG REQUIRED)
 find_package(fmt CONFIG REQUIRED)
 find_package(docopt CONFIG REQUIRED)
 find_package(magic_enum CONFIG REQUIRED)
-link_libraries(docopt_s fmt::fmt doctest::doctest magic_enum::magic_enum)
+link_libraries(docopt fmt::fmt doctest::doctest magic_enum::magic_enum)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/dependencies/time_measure)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/dependencies/time_measure/include)
