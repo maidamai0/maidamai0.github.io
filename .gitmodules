@@ -1,6 +1,0 @@
-[submodule "cmake-qmlplugin"]
-	path = cmake-qmlplugin
-	url = https://github.com/xarxer/cmake-qmlplugin
-[submodule "code/dependencies/time_measure"]
-	path = code/dependencies/time_measure
-	url = https://github.com/maidamai0/time_measure.git

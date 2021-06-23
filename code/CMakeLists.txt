@@ -7,11 +7,8 @@ find_package(docopt CONFIG REQUIRED)
 find_package(magic_enum CONFIG REQUIRED)
 link_libraries(docopt fmt::fmt doctest::doctest magic_enum::magic_enum)
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/dependencies/time_measure)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/dependencies/time_measure/include)
 link_libraries(time_measurement)
-
-add_compile_definitions(ASSETS_PATH="${CMAKE_CURRENT_SOURCE_DIR}/../assets")
 
 if(MSVC)
   set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")

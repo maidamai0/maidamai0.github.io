@@ -15,36 +15,34 @@
  *
  */
 
-#include <QString>
 #include <string>
 
 class OpenDefaultMailClientCmd final {
 public:
-  OpenDefaultMailClientCmd(QString&& receiver) noexcept;
-  void SetSubject(QString&& subject) noexcept;
-  void SetBody(QString&& body) noexcept;
+  OpenDefaultMailClientCmd(std::string&& receiver) noexcept;
+  void SetSubject(std::string&& subject) noexcept;
+  void SetBody(std::string&& body) noexcept;
   void Run();
 
-  std::string GetMailName() const noexcept;
-  std::string GetMailPath() const noexcept;
+  [[nodiscard]] auto GetMailName() const noexcept -> std::string;
+  [[nodiscard]] auto GetMailPath() const noexcept -> std::string;
 
 private:
   void get_default_mail_client() noexcept;
-  QString get_mail_path_reg_key() const noexcept;
+  [[nodiscard]] auto get_mail_path_reg_key() const noexcept -> std::string;
   void send_with_mailto_protocol() noexcept;
   void send_with_outlook() noexcept;
-  QString get_animation_path() const noexcept;
+  [[nodiscard]] auto get_animation_path() const noexcept -> std::string;
 
-private:
   enum class MAIL_CLIENT { k_outlook, k_others };
 
 private:
-  QString receiver_;
-  QString subject_;
-  QString body_;
+  std::string receiver_;
+  std::string subject_;
+  std::string body_;
 
-  QString mail_path_;
-  QString mail_name_;
+  std::string mail_path_;
+  std::string mail_name_;
 
   MAIL_CLIENT mail_type_ = MAIL_CLIENT::k_others;
 };

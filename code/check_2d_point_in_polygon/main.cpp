@@ -17,7 +17,6 @@
 #include <vcruntime.h>
 #include <vector>
 
-#include "time_measure/time_measurement.h"
 #include "winding_number.h"
 
 constexpr static size_t g_loop = 10000;
@@ -92,7 +91,6 @@ auto check_with_ray_casting(const Point p, const Polygon& polygon) -> bool {
 }
 
 auto measure_cross() {
-  BLOCK_MEASURE;
   for (size_t i = 0; i < g_loop; ++i) {
     for (const auto& polygon : {square, square_hole, strange, exagon}) {
       for (const auto& p : points) {
@@ -103,7 +101,6 @@ auto measure_cross() {
 }
 
 auto measure_cross_geomalgorithms_com() {
-  BLOCK_MEASURE;
   for (size_t i = 0; i < g_loop; ++i) {
     for (const auto& polygon : {square, square_hole, strange, exagon}) {
       for (const auto& p : points) {
@@ -114,7 +111,6 @@ auto measure_cross_geomalgorithms_com() {
 }
 
 auto measure_widing_geomalgorithms_com() {
-  BLOCK_MEASURE;
   for (size_t i = 0; i < g_loop; ++i) {
     for (const auto& polygon : {square, square_hole, strange, exagon}) {
       for (const auto& p : points) {

@@ -8,7 +8,6 @@ option(USE_CLANG_TIDY "If use Clang-tidy" ON)
 
 set(CMAKE_GENERATOR "Ninja")
 
-include(cmake-qmlplugin/QmlPlugin.cmake)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 if(USE_CLANG_TIDY)
     set(CMAKE_CXX_CLANG_TIDY clang-tidy)
