@@ -12,3 +12,4 @@ clangd_trace.json
 memory_usage.json
 *.csv
 .cache
+public

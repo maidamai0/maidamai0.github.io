@@ -1,0 +1,75 @@
+---
+title: "SSL basics"
+date: 2021-06-26T19:16:27+08:00
+draft: false
+tags: [SSL]
+categories: [network, security]
+---
+
+A brief introcution to SSL.
+
+# SSL/TLS
+
+**Key word** : Encription,SSl,TSL,TLS certificate,HTTPS,keys, How to install a certificate on a website
+
+## A little history
+
+* Netscape originally invented SSL in the mid-90s
+* Google began marking unencrypted sites **Not Secure**
+
+## Problem
+
+When sending a message between two parties you have two problems that you need to address
+
+1. How do you know that no one has read the message
+2. HOw do you know that no one has changed the message
+
+## Answer
+
+1. Encrypt it. This makes the message unreadable
+2. Sign it. This allows the recipient to be confident that it was you who send the message, without modified.
+
+Both of these processes require the use of keys.
+
+## Encription
+
+The internet is designed to transfer free infomation on its born.HTTP transfer with plain text without encription
+
+* Symmetric encription(Two-way encription ):The (private) key is used to encrypt and decrypt.
+* Key exchange is important problem
+* Asymmetric encription: public-private key pair. Public key is used to encription and private key is used to decription.
+  
+## Keys
+
+These keys are simply numbers (128 bit being common) that are then combined with the message using a particular method, commonly known as an algorithm- e.g. RSA, to either encrypt or sign the message.
+
+## SSL certificates
+
+How do you know that a particualr key belongs to a person/entity?
+
+SSL certificate serve as a ID card/passport in everyday life, which established a link between a photo and a person, and that link is verified by a trusted authority(passport office)
+
+A digital certificate(such as SSL certificate) provides a link between a **public key** and an entity that has been verified(signed) by a trusted third party(A certificate authority)
+
+A digital certificate provides a convenient way of distributing trusted publick encryption keys.
+
+## Exchanging keys-Public Key Infrastrtucture
+
+* SSL Secure Sockets Layer, the original encryption protocol used with HTTPS
+* TLS Transport Layer security, the more recent encryption protocol has replaced SSL in response to known vulnerabilities in SSLv3.
+* HTPS security version of HTTP
+* PKI entire trust model that facilitates public key encryption
+
+## SSL/TSL hand shake
+
+TLS1.2 handshake
+![tls1.2 handle shake](/images/tls_handshake_1_2.png)
+
+TLS1.3 handshake
+![tls1.3 handle shake](/images/tls_handshake_1_3.jpg)
+
+## Reference
+
+1. [TLS 101](https://geekflare.com/tls-101/)
+2. [SSL and SSL Certificates Explained For Beginners](http://www.steves-internet-guide.com/ssl-certificates-explained/)
+3. [How to fix the SSL/TLS Handshake Failed error](https://www.thesslstore.com/blog/tls-handshake-failed/)

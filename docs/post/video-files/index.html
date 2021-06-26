@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Video basics - Tonghao</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tonghao" /><meta name="description" content="Introduce some basics about video.
+Video basic concepts Each video file contains two elements:
+ Codecs, or &amp;ldquo;compression-decompression&amp;rdquo; algorithms which compress the video Formats, the type of file the data is compressed to.  Format/Container The entire set of storage rules that package a video file’s container, codecs, and metadata.Formats are developed to improve image quality, decrease file sizes, allow for universal playback on a variety of devices, and provide special features such as subtitles." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.84.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/video-files/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Video basics" />
+<meta property="og:description" content="Introduce some basics about video.
+Video basic concepts Each video file contains two elements:
+ Codecs, or &ldquo;compression-decompression&rdquo; algorithms which compress the video Formats, the type of file the data is compressed to.  Format/Container The entire set of storage rules that package a video file’s container, codecs, and metadata.Formats are developed to improve image quality, decrease file sizes, allow for universal playback on a variety of devices, and provide special features such as subtitles." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/video-files/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-05-21T19:16:27&#43;08:00" />
+<meta property="article:modified_time" content="2020-05-21T19:16:27&#43;08:00" />
+
+<meta itemprop="name" content="Video basics">
+<meta itemprop="description" content="Introduce some basics about video.
+Video basic concepts Each video file contains two elements:
+ Codecs, or &ldquo;compression-decompression&rdquo; algorithms which compress the video Formats, the type of file the data is compressed to.  Format/Container The entire set of storage rules that package a video file’s container, codecs, and metadata.Formats are developed to improve image quality, decrease file sizes, allow for universal playback on a variety of devices, and provide special features such as subtitles."><meta itemprop="datePublished" content="2020-05-21T19:16:27&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-21T19:16:27&#43;08:00" />
+<meta itemprop="wordCount" content="455">
+<meta itemprop="keywords" content="video," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Video basics"/>
+<meta name="twitter:description" content="Introduce some basics about video.
+Video basic concepts Each video file contains two elements:
+ Codecs, or &ldquo;compression-decompression&rdquo; algorithms which compress the video Formats, the type of file the data is compressed to.  Format/Container The entire set of storage rules that package a video file’s container, codecs, and metadata.Formats are developed to improve image quality, decrease file sizes, allow for universal playback on a variety of devices, and provide special features such as subtitles."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Tonghao</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Tonghao</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Video basics</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-05-21 </span>
+        <div class="post-category">
+            <a href="/categories/multimedia/"> multimedia </a>
+            </div>
+          <span class="more-meta"> 455 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#video-basic-concepts">Video basic concepts</a>
+      <ul>
+        <li><a href="#formatcontainer">Format/Container</a></li>
+        <li><a href="#codecs-compression-decompression">codecs, compression-decompression</a></li>
+        <li><a href="#compression">compression</a></li>
+        <li><a href="#frame-rate">Frame rate</a></li>
+        <li><a href="#bitdata-rate">Bit/Data rate</a></li>
+        <li><a href="#resolution">Resolution</a></li>
+        <li><a href="#ffmpeg-stuff">FFMPEG stuff</a></li>
+        <li><a href="#reference">Reference</a></li>
+        <li><a href="#audio">Audio</a>
+          <ul>
+            <li><a href="#channels">Channels</a></li>
+            <li><a href="#audio-codecs">audio codecs</a></li>
+            <li><a href="#data-rate">Data Rate</a></li>
+            <li><a href="#sample-rate">Sample rate</a></li>
+          </ul>
+        </li>
+        <li><a href="#todo">TODO</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>Introduce some basics about video.</p>
+<h1 id="video-basic-concepts">Video basic concepts</h1>
+<p>Each video file contains two elements:</p>
+<ul>
+<li>Codecs, or &ldquo;compression-decompression&rdquo; algorithms which compress the video</li>
+<li>Formats, the type of file the data is compressed to.</li>
+</ul>
+<h2 id="formatcontainer">Format/Container</h2>
+<p>The entire set of storage rules that package a video file’s container, codecs, and metadata.Formats are developed to improve image quality, decrease file sizes, allow for universal playback on a variety of devices, and provide special features such as subtitles.</p>
+<ul>
+<li>AVCHD, sony, advanced video codec high definition</li>
+<li>AVI, microsoft, audio video interlaced</li>
+<li>FLV, adobe</li>
+<li>MPEG, Motion picture experts, Motion Picture Experts Group</li>
+<li>MPEG-4, most popular.</li>
+<li>WMV, microsoft, Windows Media Video</li>
+<li>MOV,Apple</li>
+<li><a href="https://www.makemkv.com/aboutmkv/">MKV</a></li>
+<li><a href="https://www.webmproject.org/">WebM</a></li>
+</ul>
+<p>The most popular video format is MP4, also known as MPEG 4. MP4 is a multimedia container for video, audio, and data, including things like subtitles and still images. Make sure you don’t confuse MPEG 4 and MPEG 4 Audio. MPEG 4 has the file extension .MP4, while MPEG 4 Audio has the file extension .M4A and can only contain audio files.</p>
+<h2 id="codecs-compression-decompression">codecs, compression-decompression</h2>
+<p>The method a computer uses to determine the amount of change between frames is called the codec
+Common used codecs:</p>
+<ul>
+<li>H.264(AVC),1080p,the most widely used video codec used now.</li>
+<li>H.265(HEVC),4k,High Efficiency Video Coding,slowly becoming ubiquitous thanks to the proliferation of 4K content</li>
+<li><a href="https://www.webmproject.org/vp9/">VP9</a>, compatitor of H.265</li>
+<li><a href="https://aomedia.org/av1-features/get-started/">AV1</a>,still a highly experimental codec, but is supported by Firefox, Google Chrome, VLC media player, FFmpeg among others</li>
+</ul>
+<h2 id="compression">compression</h2>
+<h2 id="frame-rate">Frame rate</h2>
+<p>The number of frames shown every second.tipycally 24,25,30.
+Just like variable bit rate, exporting with a variable frame rate changes the number of frames per second depending on the amount of movement in your video. While theoretically this can save space, not all programs or websites can play back variable frame rate videos, and the audio can fall out-of-sync. To play it safe, stick with a constant frame rate.</p>
+<h2 id="bitdata-rate">Bit/Data rate</h2>
+<p>The amount of data that is used for each second of video, measured in kbps.
+Bit rates come in two flavors: constant and variable. A constant bit rate (CBR) uses the same amount of data every second, while a variable bit rate (VBR, or ABR, apaptive bit rate) adjusts the amount of data used depending on the complexity of the changes between frames.</p>
+<h2 id="resolution">Resolution</h2>
+<p>The actual size of your video, measured in pixels.</p>
+<h2 id="ffmpeg-stuff">FFMPEG stuff</h2>
+<p>time scale, reciprocal of time base,</p>
+<ul>
+<li>tbr,guessed from the video stream and is the value users want to see when they look for the video frame rate</li>
+<li>tbn,AVStream</li>
+<li>tbc,AVCodecContext</li>
+<li>pts, Presentation TimeStamp</li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://vimeo.com/blog/post/video-compression-basics/">Video compression basics</a></li>
+<li><a href="https://vimeo.com/help/compression">Vimeo Video Compression Guidelines</a></li>
+<li><a href="https://medium.com/@api.video/every-video-format-codec-and-container-explained-c831f105c716">Every Video Format, Codec, and Container Explained</a></li>
+<li><a href="https://www.videomaker.com/article/c10/15362-video-formats-explained">Video formats explained</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/codecs_parameter">The &ldquo;codecs&rdquo; parameter in common media types</a></li>
+<li><a href="https://wiki.multimedia.cx/">multimedia wiki</a></li>
+<li><a href="http://ffmpeg-users.933282.n4.nabble.com/What-does-the-output-of-ffmpeg-mean-tbr-tbn-tbc-etc-td941538.html">FFMPEG tbr,tbn,tbc</a></li>
+</ul>
+<h2 id="audio">Audio</h2>
+<h3 id="channels">Channels</h3>
+<h3 id="audio-codecs">audio codecs</h3>
+<h3 id="data-rate">Data Rate</h3>
+<p>320 kbit/s?</p>
+<h3 id="sample-rate">Sample rate</h3>
+<p>48kHZ?</p>
+<h2 id="todo">TODO</h2>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">tonghao</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-05-21
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/video/">video</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/fonts/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Font basics</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/open-default-mail-client-on-windows/">
+            <span class="next-text nav-default">Open default mail client on windows</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:yuantonghao@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5829527/maidamai" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://github.com/maidamai0" class="iconfont icon-github" title="github"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>tonghao</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

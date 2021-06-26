@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on Tonghao</title>
+    <link>http://localhost:1313/tags/windows/</link>
+    <description>Recent content in windows on Tonghao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 11 Feb 2020 19:16:27 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open default mail client on windows</title>
+      <link>http://localhost:1313/post/open-default-mail-client-on-windows/</link>
+      <pubDate>Tue, 11 Feb 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/open-default-mail-client-on-windows/</guid>
+      <description>In this article I will introduce 3 ways to open mail client on windows:
+Open a default mail client on windows10 In this article I will introduce 3 ways to open mail client on windows:
+ mailto: mapi regestry  Comparision  mailto is a protocal to open a mail client which is surpported by most clients, but no attachment can be specifed. MAPI is suited for MicroSoft Office development, so it is good surpported by Micosoft Ofice suites.</description>
+    </item>
+    
+  </channel>
+</rss>

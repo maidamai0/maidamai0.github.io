@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on Tonghao</title>
+    <link>http://localhost:1313/categories/windows/</link>
+    <description>Recent content in windows on Tonghao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 24 Jul 2020 19:16:27 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Profling windows application</title>
+      <link>http://localhost:1313/post/profiling-windows-app/</link>
+      <pubDate>Fri, 24 Jul 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/profiling-windows-app/</guid>
+      <description>Introduce tools for profiling msvc application.
+Profiling Windows App Vsperf TODO Where is vsperf* tools for vs2019.These tools are not available form vs2019 page in the online documentation
+VSDiagnostics?
+[RAD] (http://www.radgametools.com/telemetry.htm) Tracy Reference  Measure app performance in Visual Studio Understand performance collection methods Measure application performance from the command line Command-line profiling tools reference  </description>
+    </item>
+    
+    <item>
+      <title>Memory leak check on windows</title>
+      <link>http://localhost:1313/post/memory-leak-check-on-windows/</link>
+      <pubDate>Wed, 04 Dec 2019 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/memory-leak-check-on-windows/</guid>
+      <description>Introduce some tools for memory checking for msvc.
+Tools for detect memory check on windows  Visual c++ CRT library VLD for visual c++ Dr.Memory  </description>
+    </item>
+    
+  </channel>
+</rss>

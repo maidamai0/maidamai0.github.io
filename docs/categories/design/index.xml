@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>design on Tonghao</title>
+    <link>http://localhost:1313/categories/design/</link>
+    <description>Recent content in design on Tonghao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 27 May 2020 19:16:27 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Font basics</title>
+      <link>http://localhost:1313/post/fonts/</link>
+      <pubDate>Wed, 27 May 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/fonts/</guid>
+      <description>Basics about fonts.
+Basics about fonts Font vs typeface  Typeface: Helvetica Font: Helvetica Regular 9 point.  Font vs Font family Font family is like typeface, it is a colletion.
+Font encoding Freetype library Reference  The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!) How are character encodings related to fonts? FontForge Where can I get information on the mechanics of fonts?</description>
+    </item>
+    
+  </channel>
+</rss>
