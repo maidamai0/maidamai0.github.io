@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Tonghao</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on Tonghao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 26 Jun 2021 19:16:27 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>network</title>
+      <link>http://localhost:1313/categories/network/</link>
+      <pubDate>Sat, 26 Jun 2021 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>http://localhost:1313/categories/security/</link>
+      <pubDate>Sat, 26 Jun 2021 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>http://localhost:1313/categories/c&#43;&#43;/</link>
+      <pubDate>Sun, 25 Apr 2021 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>concurrency</title>
+      <link>http://localhost:1313/categories/concurrency/</link>
+      <pubDate>Sun, 25 Apr 2021 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/concurrency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>http://localhost:1313/categories/windows/</link>
+      <pubDate>Fri, 24 Jul 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>design</title>
+      <link>http://localhost:1313/categories/design/</link>
+      <pubDate>Wed, 27 May 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>encode</title>
+      <link>http://localhost:1313/categories/encode/</link>
+      <pubDate>Wed, 27 May 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/encode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multimedia</title>
+      <link>http://localhost:1313/categories/multimedia/</link>
+      <pubDate>Thu, 21 May 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/multimedia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>desktop</title>
+      <link>http://localhost:1313/categories/desktop/</link>
+      <pubDate>Tue, 11 Feb 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/desktop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gui</title>
+      <link>http://localhost:1313/categories/gui/</link>
+      <pubDate>Tue, 11 Feb 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/gui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debug</title>
+      <link>http://localhost:1313/categories/debug/</link>
+      <pubDate>Mon, 13 Jan 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/debug/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

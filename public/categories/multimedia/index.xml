@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>multimedia on Tonghao</title>
+    <link>http://localhost:1313/categories/multimedia/</link>
+    <description>Recent content in multimedia on Tonghao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 21 May 2020 19:16:27 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/multimedia/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Video basics</title>
+      <link>http://localhost:1313/post/video-files/</link>
+      <pubDate>Thu, 21 May 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/video-files/</guid>
+      <description>Introduce some basics about video.
+Video basic concepts Each video file contains two elements:
+ Codecs, or &amp;ldquo;compression-decompression&amp;rdquo; algorithms which compress the video Formats, the type of file the data is compressed to.  Format/Container The entire set of storage rules that package a video file’s container, codecs, and metadata.Formats are developed to improve image quality, decrease file sizes, allow for universal playback on a variety of devices, and provide special features such as subtitles.</description>
+    </item>
+    
+  </channel>
+</rss>

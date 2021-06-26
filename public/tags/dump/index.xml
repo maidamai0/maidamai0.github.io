@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dump on Tonghao</title>
+    <link>http://localhost:1313/tags/dump/</link>
+    <description>Recent content in dump on Tonghao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 13 Jan 2020 19:16:27 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/dump/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crash dump analysis with windbg</title>
+      <link>http://localhost:1313/post/crash-dump-analysis-with-windbg/</link>
+      <pubDate>Mon, 13 Jan 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/crash-dump-analysis-with-windbg/</guid>
+      <description>Introduce basic steps for using windbg.
+Steps of crash dump analysis with windbg .exr -1 The .exr command displays the contents of an exception record (a EXCEPTION_RECORD structure).
+The EXCEPTION_RECORD structure contains the Instruction Address (the function raising the exception), the Exception Code, and (max 15) Exception Parameters.
+0x80000003 is break point exception.
+.lastevent displays the most recent exception or event that occurred.
+!analyze -v .symopt+ 0x40 force load symbols</description>
+    </item>
+    
+  </channel>
+</rss>

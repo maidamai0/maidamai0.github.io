@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>QML on Tonghao</title>
+    <link>http://localhost:1313/tags/qml/</link>
+    <description>Recent content in QML on Tonghao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 14 Nov 2019 19:16:27 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/qml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>QML overview</title>
+      <link>http://localhost:1313/post/qml-overview/</link>
+      <pubDate>Thu, 14 Nov 2019 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/qml-overview/</guid>
+      <description>In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+Overview of QML language In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+Qt QML module is provides the QML engine and language infrastructure.</description>
+    </item>
+    
+  </channel>
+</rss>

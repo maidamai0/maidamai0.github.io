@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>SSL basics - Tonghao</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tonghao" /><meta name="description" content="A brief introcution to SSL.
+SSL/TLS Key word : Encription,SSl,TSL,TLS certificate,HTTPS,keys, How to install a certificate on a website
+A little history  Netscape originally invented SSL in the mid-90s Google began marking unencrypted sites Not Secure  Problem When sending a message between two parties you have two problems that you need to address
+ How do you know that no one has read the message HOw do you know that no one has changed the message  Answer  Encrypt it." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.84.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/ssl/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="SSL basics" />
+<meta property="og:description" content="A brief introcution to SSL.
+SSL/TLS Key word : Encription,SSl,TSL,TLS certificate,HTTPS,keys, How to install a certificate on a website
+A little history  Netscape originally invented SSL in the mid-90s Google began marking unencrypted sites Not Secure  Problem When sending a message between two parties you have two problems that you need to address
+ How do you know that no one has read the message HOw do you know that no one has changed the message  Answer  Encrypt it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/ssl/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-26T19:16:27&#43;08:00" />
+<meta property="article:modified_time" content="2021-06-26T19:16:27&#43;08:00" />
+
+<meta itemprop="name" content="SSL basics">
+<meta itemprop="description" content="A brief introcution to SSL.
+SSL/TLS Key word : Encription,SSl,TSL,TLS certificate,HTTPS,keys, How to install a certificate on a website
+A little history  Netscape originally invented SSL in the mid-90s Google began marking unencrypted sites Not Secure  Problem When sending a message between two parties you have two problems that you need to address
+ How do you know that no one has read the message HOw do you know that no one has changed the message  Answer  Encrypt it."><meta itemprop="datePublished" content="2021-06-26T19:16:27&#43;08:00" />
+<meta itemprop="dateModified" content="2021-06-26T19:16:27&#43;08:00" />
+<meta itemprop="wordCount" content="356">
+<meta itemprop="keywords" content="SSL," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SSL basics"/>
+<meta name="twitter:description" content="A brief introcution to SSL.
+SSL/TLS Key word : Encription,SSl,TSL,TLS certificate,HTTPS,keys, How to install a certificate on a website
+A little history  Netscape originally invented SSL in the mid-90s Google began marking unencrypted sites Not Secure  Problem When sending a message between two parties you have two problems that you need to address
+ How do you know that no one has read the message HOw do you know that no one has changed the message  Answer  Encrypt it."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Tonghao</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Tonghao</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">SSL basics</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-06-26 </span>
+        <div class="post-category">
+            <a href="/categories/network/"> network </a>
+            <a href="/categories/security/"> security </a>
+            </div>
+          <span class="more-meta"> 356 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ssltls">SSL/TLS</a>
+      <ul>
+        <li><a href="#a-little-history">A little history</a></li>
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#answer">Answer</a></li>
+        <li><a href="#encription">Encription</a></li>
+        <li><a href="#keys">Keys</a></li>
+        <li><a href="#ssl-certificates">SSL certificates</a></li>
+        <li><a href="#exchanging-keys-public-key-infrastrtucture">Exchanging keys-Public Key Infrastrtucture</a></li>
+        <li><a href="#ssltsl-hand-shake">SSL/TSL hand shake</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>A brief introcution to SSL.</p>
+<h1 id="ssltls">SSL/TLS</h1>
+<p><strong>Key word</strong> : Encription,SSl,TSL,TLS certificate,HTTPS,keys, How to install a certificate on a website</p>
+<h2 id="a-little-history">A little history</h2>
+<ul>
+<li>Netscape originally invented SSL in the mid-90s</li>
+<li>Google began marking unencrypted sites <strong>Not Secure</strong></li>
+</ul>
+<h2 id="problem">Problem</h2>
+<p>When sending a message between two parties you have two problems that you need to address</p>
+<ol>
+<li>How do you know that no one has read the message</li>
+<li>HOw do you know that no one has changed the message</li>
+</ol>
+<h2 id="answer">Answer</h2>
+<ol>
+<li>Encrypt it. This makes the message unreadable</li>
+<li>Sign it. This allows the recipient to be confident that it was you who send the message, without modified.</li>
+</ol>
+<p>Both of these processes require the use of keys.</p>
+<h2 id="encription">Encription</h2>
+<p>The internet is designed to transfer free infomation on its born.HTTP transfer with plain text without encription</p>
+<ul>
+<li>Symmetric encription(Two-way encription ):The (private) key is used to encrypt and decrypt.</li>
+<li>Key exchange is important problem</li>
+<li>Asymmetric encription: public-private key pair. Public key is used to encription and private key is used to decription.</li>
+</ul>
+<h2 id="keys">Keys</h2>
+<p>These keys are simply numbers (128 bit being common) that are then combined with the message using a particular method, commonly known as an algorithm- e.g. RSA, to either encrypt or sign the message.</p>
+<h2 id="ssl-certificates">SSL certificates</h2>
+<p>How do you know that a particualr key belongs to a person/entity?</p>
+<p>SSL certificate serve as a ID card/passport in everyday life, which established a link between a photo and a person, and that link is verified by a trusted authority(passport office)</p>
+<p>A digital certificate(such as SSL certificate) provides a link between a <strong>public key</strong> and an entity that has been verified(signed) by a trusted third party(A certificate authority)</p>
+<p>A digital certificate provides a convenient way of distributing trusted publick encryption keys.</p>
+<h2 id="exchanging-keys-public-key-infrastrtucture">Exchanging keys-Public Key Infrastrtucture</h2>
+<ul>
+<li>SSL Secure Sockets Layer, the original encryption protocol used with HTTPS</li>
+<li>TLS Transport Layer security, the more recent encryption protocol has replaced SSL in response to known vulnerabilities in SSLv3.</li>
+<li>HTPS security version of HTTP</li>
+<li>PKI entire trust model that facilitates public key encryption</li>
+</ul>
+<h2 id="ssltsl-hand-shake">SSL/TSL hand shake</h2>
+<p>TLS1.2 handshake
+<img src="/images/tls_handshake_1_2.png" alt="tls1.2 handle shake"></p>
+<p>TLS1.3 handshake
+<img src="/images/tls_handshake_1_3.jpg" alt="tls1.3 handle shake"></p>
+<h2 id="reference">Reference</h2>
+<ol>
+<li><a href="https://geekflare.com/tls-101/">TLS 101</a></li>
+<li><a href="http://www.steves-internet-guide.com/ssl-certificates-explained/">SSL and SSL Certificates Explained For Beginners</a></li>
+<li><a href="https://www.thesslstore.com/blog/tls-handshake-failed/">How to fix the SSL/TLS Handshake Failed error</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">tonghao</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-06-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ssl/">SSL</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/a-simple-thread-pool/">
+            <span class="next-text nav-default">A simple thread pool in C&#43;&#43;</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:yuantonghao@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5829527/maidamai" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://github.com/maidamai0" class="iconfont icon-github" title="github"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>tonghao</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

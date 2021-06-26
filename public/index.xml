@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tonghao</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Tonghao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 26 Jun 2021 19:16:27 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSL basics</title>
+      <link>http://localhost:1313/post/ssl/</link>
+      <pubDate>Sat, 26 Jun 2021 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/ssl/</guid>
+      <description>A brief introcution to SSL.
+SSL/TLS Key word : Encription,SSl,TSL,TLS certificate,HTTPS,keys, How to install a certificate on a website
+A little history  Netscape originally invented SSL in the mid-90s Google began marking unencrypted sites Not Secure  Problem When sending a message between two parties you have two problems that you need to address
+ How do you know that no one has read the message HOw do you know that no one has changed the message  Answer  Encrypt it.</description>
+    </item>
+    
+    <item>
+      <title>A simple thread pool in C&#43;&#43;</title>
+      <link>http://localhost:1313/post/a-simple-thread-pool/</link>
+      <pubDate>Sun, 25 Apr 2021 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/a-simple-thread-pool/</guid>
+      <description>A simple thread pool based on, highly inspired by Easy3D
+Implement a simple thread pool This thread pool is a consumer/producer queue without the consume API. Users produce task with Push API, which will be consumed by the threads(workers) of the pool.
+The code is as follows:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87  #include &amp;lt;atomic&amp;gt;#include &amp;lt;cassert&amp;gt;#include &amp;lt;chrono&amp;gt;#include &amp;lt;functional&amp;gt;#include &amp;lt;future&amp;gt;#include &amp;lt;iostream&amp;gt;#include &amp;lt;memory&amp;gt;#include &amp;lt;mutex&amp;gt;#include &amp;lt;queue&amp;gt;#include &amp;lt;string&amp;gt;#include &amp;lt;thread&amp;gt;#include &amp;lt;type_traits&amp;gt;#include &amp;lt;utility&amp;gt;#include &amp;lt;vector&amp;gt; class ThreadPool { using task_type = std::function&amp;lt;void()&amp;gt;; public: ThreadPool(size_t num = std:🧵:hardware_concurrency()) { for (size_t i = 0; i &amp;lt; num; ++i) { workers_.</description>
+    </item>
+    
+    <item>
+      <title>Profling windows application</title>
+      <link>http://localhost:1313/post/profiling-windows-app/</link>
+      <pubDate>Fri, 24 Jul 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/profiling-windows-app/</guid>
+      <description>Introduce tools for profiling msvc application.
+Profiling Windows App Vsperf TODO Where is vsperf* tools for vs2019.These tools are not available form vs2019 page in the online documentation
+VSDiagnostics?
+[RAD] (http://www.radgametools.com/telemetry.htm) Tracy Reference  Measure app performance in Visual Studio Understand performance collection methods Measure application performance from the command line Command-line profiling tools reference  </description>
+    </item>
+    
+    <item>
+      <title>Font basics</title>
+      <link>http://localhost:1313/post/fonts/</link>
+      <pubDate>Wed, 27 May 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/fonts/</guid>
+      <description>Basics about fonts.
+Basics about fonts Font vs typeface  Typeface: Helvetica Font: Helvetica Regular 9 point.  Font vs Font family Font family is like typeface, it is a colletion.
+Font encoding Freetype library Reference  The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!) How are character encodings related to fonts? FontForge Where can I get information on the mechanics of fonts?</description>
+    </item>
+    
+    <item>
+      <title>Video basics</title>
+      <link>http://localhost:1313/post/video-files/</link>
+      <pubDate>Thu, 21 May 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/video-files/</guid>
+      <description>Introduce some basics about video.
+Video basic concepts Each video file contains two elements:
+ Codecs, or &amp;ldquo;compression-decompression&amp;rdquo; algorithms which compress the video Formats, the type of file the data is compressed to.  Format/Container The entire set of storage rules that package a video file’s container, codecs, and metadata.Formats are developed to improve image quality, decrease file sizes, allow for universal playback on a variety of devices, and provide special features such as subtitles.</description>
+    </item>
+    
+    <item>
+      <title>Open default mail client on windows</title>
+      <link>http://localhost:1313/post/open-default-mail-client-on-windows/</link>
+      <pubDate>Tue, 11 Feb 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/open-default-mail-client-on-windows/</guid>
+      <description>In this article I will introduce 3 ways to open mail client on windows:
+Open a default mail client on windows10 In this article I will introduce 3 ways to open mail client on windows:
+ mailto: mapi regestry  Comparision  mailto is a protocal to open a mail client which is surpported by most clients, but no attachment can be specifed. MAPI is suited for MicroSoft Office development, so it is good surpported by Micosoft Ofice suites.</description>
+    </item>
+    
+    <item>
+      <title>Crash dump analysis with windbg</title>
+      <link>http://localhost:1313/post/crash-dump-analysis-with-windbg/</link>
+      <pubDate>Mon, 13 Jan 2020 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/crash-dump-analysis-with-windbg/</guid>
+      <description>Introduce basic steps for using windbg.
+Steps of crash dump analysis with windbg .exr -1 The .exr command displays the contents of an exception record (a EXCEPTION_RECORD structure).
+The EXCEPTION_RECORD structure contains the Instruction Address (the function raising the exception), the Exception Code, and (max 15) Exception Parameters.
+0x80000003 is break point exception.
+.lastevent displays the most recent exception or event that occurred.
+!analyze -v .symopt+ 0x40 force load symbols</description>
+    </item>
+    
+    <item>
+      <title>Memory leak check on windows</title>
+      <link>http://localhost:1313/post/memory-leak-check-on-windows/</link>
+      <pubDate>Wed, 04 Dec 2019 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/memory-leak-check-on-windows/</guid>
+      <description>Introduce some tools for memory checking for msvc.
+Tools for detect memory check on windows  Visual c++ CRT library VLD for visual c++ Dr.Memory  </description>
+    </item>
+    
+    <item>
+      <title>QML overview</title>
+      <link>http://localhost:1313/post/qml-overview/</link>
+      <pubDate>Thu, 14 Nov 2019 19:16:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/qml-overview/</guid>
+      <description>In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+Overview of QML language In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+Qt QML module is provides the QML engine and language infrastructure.</description>
+    </item>
+    
+  </channel>
+</rss>

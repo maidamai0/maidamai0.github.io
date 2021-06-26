@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>QML overview - Tonghao</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tonghao" /><meta name="description" content="In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+Overview of QML language In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+Qt QML module is provides the QML engine and language infrastructure." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.84.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/qml-overview/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="QML overview" />
+<meta property="og:description" content="In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+Overview of QML language In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+Qt QML module is provides the QML engine and language infrastructure." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/qml-overview/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-11-14T19:16:27&#43;08:00" />
+<meta property="article:modified_time" content="2019-11-14T19:16:27&#43;08:00" />
+
+<meta itemprop="name" content="QML overview">
+<meta itemprop="description" content="In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+Overview of QML language In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+Qt QML module is provides the QML engine and language infrastructure."><meta itemprop="datePublished" content="2019-11-14T19:16:27&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-14T19:16:27&#43;08:00" />
+<meta itemprop="wordCount" content="1204">
+<meta itemprop="keywords" content="QML,Qt," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="QML overview"/>
+<meta name="twitter:description" content="In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+Overview of QML language In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.
+Qt QML module is provides the QML engine and language infrastructure."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Tonghao</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Tonghao</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">QML overview</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-11-14 </span>
+        <div class="post-category">
+            <a href="/categories/gui/"> GUI </a>
+            <a href="/categories/c&#43;&#43;/"> C&#43;&#43; </a>
+            </div>
+          <span class="more-meta"> 1204 words </span>
+          <span class="more-meta"> 6 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview-of-qml-language">Overview of QML language</a>
+      <ul>
+        <li><a href="#qt-quick1-vs-qt-quick2">Qt Quick1 vs Qt Quick2</a></li>
+        <li><a href="#debug-tools">Debug tools</a>
+          <ul>
+            <li><a href="#test">Test</a></li>
+            <li><a href="#qmlscene">qmlscene</a></li>
+          </ul>
+        </li>
+        <li><a href="#syntax">syntax</a>
+          <ul>
+            <li><a href="#import">Import</a></li>
+            <li><a href="#scope-and-name-resolution">Scope and name resolution</a></li>
+          </ul>
+        </li>
+        <li><a href="#type-system">Type system</a></li>
+        <li><a href="#elements">elements</a></li>
+        <li><a href="#user-defined-elements">user defined elements</a></li>
+        <li><a href="#layout">layout</a></li>
+        <li><a href="#controls">Controls</a>
+          <ul>
+            <li><a href="#manualfixed-position">Manual/Fixed position</a></li>
+            <li><a href="#anchor">Anchor</a></li>
+            <li><a href="#positioners">Positioners</a></li>
+            <li><a href="#layout-1">Layout</a></li>
+          </ul>
+        </li>
+        <li><a href="#state-and-transtision">State and transtision</a></li>
+        <li><a href="#model-and-viewshttpsdocqtioqt-5qtquick-modelviewsdata-modelviewhtml"><a href="https://doc.qt.io/qt-5/qtquick-modelviewsdata-modelview.html">Model and views</a></a>
+          <ul>
+            <li><a href="#model">Model</a></li>
+            <li><a href="#views">Views</a></li>
+            <li><a href="#repeater">Repeater</a></li>
+          </ul>
+        </li>
+        <li><a href="#qt-widgets-modelview">[Qt Widgets Model/View]</a></li>
+        <li><a href="#interact-with-c">Interact with c++</a></li>
+        <li><a href="#type-conversion-between-qml-and-c">Type conversion between QML and C++</a></li>
+        <li><a href="#graphics-view-framewokhttpsdocqtioqt-5graphicsviewhtml"><a href="https://doc.qt.io/qt-5/graphicsview.html">Graphics View Framewok</a></a></li>
+        <li><a href="#scene-graph">Scene graph</a>
+          <ul>
+            <li><a href="#render-flow">Render flow</a></li>
+            <li><a href="#important-classes-used">Important classes used</a></li>
+            <li><a href="#how-to-add-custom-node-to-scene-graph">How to add custom node to scene graph</a></li>
+          </ul>
+        </li>
+        <li><a href="#frame-graph">Frame graph</a></li>
+        <li><a href="#3d">3D</a></li>
+        <li><a href="#multi-threads">Multi-threads</a></li>
+        <li><a href="#internals">Internals</a></li>
+        <li><a href="#question-to-be-answered">Question to be answered</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.</p>
+<h1 id="overview-of-qml-language">Overview of QML language</h1>
+<p>In this post, I want to make a clear framewok of QML language howerver, this post is far from completed, I will update this post when I have new things.</p>
+<p>Qt QML module is provides the QML engine and language infrastructure.
+Qt QML provides two API:</p>
+<ul>
+<li><a href="https://doc.qt.io/qt-5/qtqml-qmlmodule.html">QML API</a>: for creating user interface</li>
+<li><a href="https://doc.qt.io/qt-5/qtqml-module.html">C++ API</a>: for extending QML applications with c++ code.</li>
+</ul>
+<p>Qt Quick module is the standard library for writing for QML applications,Providing all the basic types for creating user interfaces with QML.</p>
+<p>Qt Quick Control module provides a set of controls can be used to build complete interface in Qt Quick.</p>
+<h2 id="qt-quick1-vs-qt-quick2">Qt Quick1 vs Qt Quick2</h2>
+<ul>
+<li>Qt Quick1 use QGraphicsView and QPainter</li>
+<li>Qt Quick1 use QWindow and QOpenGL which involves QSceneGraph</li>
+</ul>
+<h2 id="debug-tools">Debug tools</h2>
+<h3 id="test">Test</h3>
+<h3 id="qmlscene">qmlscene</h3>
+<p><a href="https://doc.qt.io/qt-5/qtquick-debugging.html">Debugging QML Applications</a></p>
+<h2 id="syntax">syntax</h2>
+<h3 id="import">Import</h3>
+<ol>
+<li><a href="https://doc.qt.io/qt-5/qtqml-syntax-directoryimports.html">Import a directory</a>
+<ol>
+<li>A local directoy, all qml files, no js files.</li>
+<li>A local directoy with a <strong>qmldir</strong> file, types specified in the qmldir file, may have js files.</li>
+<li>A remote directoy with a <strong>qmldir</strong> file, types specified in the qmldir file.</li>
+<li>Import to a namespace, import a directory dont create a namespace by default, but you can create one with <strong>import dir as namespace</strong></li>
+</ol>
+</li>
+<li><a href="https://doc.qt.io/qt-5/qtqml-modules-topic.html">Import a module/plugin</a>
+<ol>
+<li>Modules can be <a href="https://doc.qt.io/qt-5/qqmlextensionplugin.html">c++ plugins</a> or QML documents.</li>
+<li>Module is defined and exported by a qmldir file.</li>
+<li>Module&rsquo;s name is a namespace.</li>
+<li>Module may contains QML types, js resources and c++ plugins, all thie file must in the same directory</li>
+<li><a href="https://doc.qt.io/qt-5/qtqml-modules-identifiedmodules.html">Identified modules</a></li>
+<li>A module requires at leat one type registered to be considered valid.</li>
+<li>Provide type information to qtcretor with <strong>qmltypes</strong> file</li>
+</ol>
+</li>
+<li>Import path
+<ol>
+<li>Directories contain a module definition qmldir file.</li>
+<li><strong>QML2_IMPORT_PATH</strong> can be set to a list of import path which will be used by any QML application</li>
+<li><strong>QML_IMPORT_PATH</strong> qmake keyword, used in qtcreator</li>
+<li><strong>QML_IMPORT_TRACE</strong> environment variable, if set to <strong>1</strong>, import path will be recoreded in log.</li>
+</ol>
+</li>
+</ol>
+<h3 id="scope-and-name-resolution">Scope and name resolution</h3>
+<h2 id="type-system">Type system</h2>
+<ol>
+<li><a href="https://doc.qt.io/qt-5/qtqml-typesystem-objecttypes.html">Object Type</a>
+<ol>
+<li>Made from c++</li>
+<li>Made form qml</li>
+</ol>
+</li>
+</ol>
+<h2 id="elements">elements</h2>
+<p>// TODO create a online inherits diagram</p>
+<ul>
+<li>
+<p>Visual elements has a geometry on the screen, Item is the base.</p>
+</li>
+<li>
+<p>non-visual elements provides some functionality.</p>
+</li>
+<li>
+<p><a href="https://doc.qt.io/qt-5/qml-qtquick-item.html">Item</a></p>
+</li>
+<li>
+<p><a href="https://doc.qt.io/qt-5/qml-qtqml-component.html">Component</a></p>
+<ul>
+<li>A seprate qml file</li>
+<li>A Component type in a qml file.</li>
+</ul>
+</li>
+<li>
+<p>QtQuick</p>
+<ul>
+<li>Rectangle</li>
+<li>MouseArea</li>
+<li>Image</li>
+<li>Text</li>
+<li><a href="https://doc.qt.io/qt-5/qml-qtquick-canvas.html">Canvas</a></li>
+<li>Grid</li>
+<li>Column</li>
+<li>Row</li>
+</ul>
+</li>
+<li>
+<p><a href="https://doc.qt.io/qt-5/qtquicklayouts-overview.html">QtQuick.layouts</a></p>
+<ul>
+<li><a href="https://doc.qt.io/qt-5/qml-qtquick-layouts-layout.html">Layout</a></li>
+<li>GridLayout</li>
+<li>ColumnLayout</li>
+<li>RowLayout</li>
+<li>StackLayout</li>
+</ul>
+<p><strong>Note</strong>: A layout is responsible for its children&rsquo;s geometry. You should therefore not specify width, height, x, y or any other properties that might influence those properties (such as anchors) on those items. Otherwise there would be a conflict of interest, and the result is undefined. This is also the case if the child item is a layout. Therefore, only layouts with no parent layout can have anchors.fill: parent.</p>
+</li>
+<li>
+<p><a href="https://doc.qt.io/qt-5/qtquick-controls2-qmlmodule.html">QtQuick.Controls</a></p>
+<ul>
+<li><a href="https://doc.qt.io/qt-5/qml-qtquick-controls2-action.html">Action</a></li>
+<li><a href="https://doc.qt.io/qt-5/qml-qtquick-controls2-actiongroup.html">ActionGroup</a></li>
+<li><a href="https://doc.qt.io/qt-5/qml-qtquick-controls2-applicationwindow.html">ApplicationWindow</a></li>
+<li><a href="https://doc.qt.io/qt-5/qml-qtquick-controls2-buttongroup.html">ButtonGroup</a></li>
+<li><a href="(https://doc.qt.io/qt-5/qml-qtquick-controls2-control.html)">Controls</a>
+<ul>
+<li><a href="https://doc.qt.io/qt-5/qml-qtquick-controls2-abstractbutton.html">AbstractButton</a>
+<ul>
+<li>Button
+<ul>
+<li>RoundButton</li>
+<li>ToolButton</li>
+</ul>
+</li>
+<li>CheckBox</li>
+<li>DelayButton</li>
+<li>ItemDelegate
+<ul>
+<li>CheckDelegate</li>
+<li>RadioDelegate</li>
+<li>SwipeDelegate</li>
+<li>SwitchDelegate</li>
+</ul>
+</li>
+<li>MenuBarItem</li>
+<li>RadioButton</li>
+<li>Switch</li>
+<li>TabButton</li>
+<li>ScrollBar</li>
+<li>ScrollIndicator</li>
+</ul>
+</li>
+<li><a href="https://doc.qt.io/qt-5/qml-qtquick-controls2-busyindicator.html">BusyIndicator</a></li>
+<li>Combobox</li>
+<li>Dial</li>
+<li>MenuSeparator</li>
+<li>Pane
+<ul>
+<li>Frame
+<ul>
+<li>GroupBox</li>
+</ul>
+</li>
+<li>Page</li>
+<li>ScrollView</li>
+<li>ToolBar</li>
+</ul>
+</li>
+<li>PageIndicator</li>
+<li>ProgressBar</li>
+<li>RangeSlider</li>
+<li>Slider</li>
+<li>SpinBox</li>
+<li>SplitView</li>
+<li>StackView</li>
+<li>ToolSeparator</li>
+<li>Tumbler</li>
+</ul>
+</li>
+<li><a href="https://doc.qt.io/qt-5/qml-qtquick-controls2-container.html">Container</a>
+<ul>
+<li>DialogButtonBox</li>
+<li>MenuBar</li>
+<li>SwipeView</li>
+<li>TabBar</li>
+</ul>
+</li>
+<li>Label</li>
+<li><a href="https://doc.qt.io/qt-5/qml-qtquick-controls2-popup.html">Popup</a>
+<ul>
+<li>Dialog</li>
+<li>ToolTip</li>
+<li>Menu</li>
+<li>Drawer</li>
+</ul>
+</li>
+<li>Splithandle</li>
+<li><a href="https://doc.qt.io/qt-5/qml-qtquick-controls2-textarea.html">TextArea</a></li>
+<li>TextField</li>
+</ul>
+</li>
+<li>
+<p>QtQuick.Window</p>
+<ul>
+<li><a href="https://doc.qt.io/qt-5/qml-qtquick-window-window.html">Window</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="user-defined-elements">user defined elements</h2>
+<ul>
+<li>
+<p>Component</p>
+</li>
+<li>
+<p>C++?</p>
+</li>
+</ul>
+<h2 id="layout">layout</h2>
+<p>QtQuick.Layouts</p>
+<ul>
+<li>Alignment</li>
+<li>Resizable</li>
+<li>Size constraints</li>
+<li>Spacing</li>
+</ul>
+<p>More about item size.</p>
+<ul>
+<li>
+<p>Item</p>
+<ul>
+<li>width</li>
+<li>height</li>
+<li>implicitWidth, will be used if width is not specified</li>
+<li>implicitHeight, will be used if height is not specified.</li>
+</ul>
+</li>
+<li>
+<p>Layouts</p>
+<ul>
+<li>Layout.minimumWidth</li>
+<li>Layout.prefferedHeight</li>
+<li>Layout.MaxmumWidth</li>
+</ul>
+</li>
+<li>
+<p>If Layout.fillWidth/Height set to false, Layout.prefferedWidth/Height will be used; if set to true, width/height is between [min, max]</p>
+</li>
+<li>
+<p>The implicitWidth/Height depends on its contents.</p>
+</li>
+<li>
+<p>Image and Text has readonly implicitWidth/Height.</p>
+</li>
+</ul>
+<p>Flow</p>
+<h2 id="controls">Controls</h2>
+<p>Control is the base type of all items in QtQuick.Control.</p>
+<p><a href="https://doc.qt.io/qt-5/qml-qtquick-controls2-control.html">Qml Control Type</a></p>
+<h3 id="manualfixed-position">Manual/Fixed position</h3>
+<h3 id="anchor">Anchor</h3>
+<h3 id="positioners">Positioners</h3>
+<h3 id="layout-1">Layout</h3>
+<h2 id="state-and-transtision">State and transtision</h2>
+<h2 id="model-and-viewshttpsdocqtioqt-5qtquick-modelviewsdata-modelviewhtml"><a href="https://doc.qt.io/qt-5/qtquick-modelviewsdata-modelview.html">Model and views</a></h2>
+<p>model is datas,delegate is responsible visualization for every data, view is like a container to put those UIs.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"> <span class="k">for</span> <span class="nl">data</span> <span class="p">:</span> <span class="n">datas</span> <span class="p">{</span>
+    <span class="n">element</span> <span class="o">=</span> <span class="n">delegate</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1">// visualize data
+</span><span class="c1"></span>    <span class="n">view</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+ <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Qt has predefined views and models, you can create any UI to serve as a delegate.Most of the time, you may want to create your own delegates and use predefined models and views.</p>
+<h3 id="model">Model</h3>
+<ul>
+<li>role, can be accessed directly or through model.[role_name]</li>
+<li>modelData role</li>
+<li>index role</li>
+</ul>
+<h4 id="qml-predefined-model">QML predefined model</h4>
+<p>ListModel</p>
+<h4 id="use-c-model">Use C++ Model</h4>
+<ul>
+<li>QList&lt;QObject*&gt;, access with model.model.ModelDta[.property]</li>
+<li>QStringList, access with model.modelData</li>
+</ul>
+<p><a href="https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html#qobjectlist-based-model">Using C++ Models with Qt Quick Views</a></p>
+<h3 id="views">Views</h3>
+<ul>
+<li>ListView</li>
+<li>GridView</li>
+<li>PathView</li>
+</ul>
+<h3 id="repeater">Repeater</h3>
+<p>Repeater can be seen as a very basic view, it creates elements according to model and delegate.However, a repeater does&rsquo;t arrange elements it created, and ofen used with Layout/Positioner to do the arrange job.</p>
+<ol>
+<li><strong>delegate</strong> is the default property of repeater.</li>
+<li>The parent of the created elements is the repeater&rsquo;s parent.</li>
+<li>Delegate of repeater must be a Item-based.</li>
+<li>All items in repeater have an attached property <strong>index</strong></li>
+<li><strong>model</strong> of repeater can be many types including Models in QML, different type expose different property to delegate.
+<ol>
+<li>model object</li>
+<li>number</li>
+</ol>
+</li>
+</ol>
+<h2 id="qt-widgets-modelview">[Qt Widgets Model/View]</h2>
+<p>QAbstractItemModel is the interface of all models.</p>
+<h2 id="interact-with-c">Interact with c++</h2>
+<ul>
+<li>C++ -&gt; QML: c++ code serve as model and do heavy logic
+<ol>
+<li>Register c++ class/object to qml engine</li>
+<li>Create a plugin with c++</li>
+</ol>
+</li>
+<li>QML -&gt; C++: Load a qml file to c++ code.
+<ol>
+<li>Load with QQmlComponent-&gt;load a qml file as a c++ object.</li>
+<li>Load with QQuickView/QQuickView.QQuickWidget is a convinient wrapper of QQuickWindow.</li>
+</ol>
+</li>
+</ul>
+<p><a href="https://doc.qt.io/qt-5/qtqml-cppintegration-overview.html">Overview of QML and C++ integration</a></p>
+<p><a href="https://doc.qt.io/qt-5/qtqml-cppintegration-interactqmlfromcpp.html">Interacting with QML Objects from C++</a></p>
+<p><a href="https://doc.qt.io/qt-5/qtqml-cppintegration-definetypes.html">Define QML types from c++</a></p>
+<p><a href="https://doc.qt.io/qt-5/qtqml-modules-cppplugins.html">Creating c++ plugins for QML</a></p>
+<h2 id="type-conversion-between-qml-and-c">Type conversion between QML and C++</h2>
+<p><a href="https://doc.qt.io/qt-5/qtqml-cppintegration-data.html">Type conversion between QML and C++</a></p>
+<h2 id="graphics-view-framewokhttpsdocqtioqt-5graphicsviewhtml"><a href="https://doc.qt.io/qt-5/graphicsview.html">Graphics View Framewok</a></h2>
+<h2 id="scene-graph">Scene graph</h2>
+<h3 id="render-flow">Render flow</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">@startuml
+: QML Components;
+: QtQuickItems;
+: QSGNodes;
+: SceneGraph Renderer;
+: OpenGL Commands;
+@enduml
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuR9I2FJrKN3Epot8pqlDAocs1ecK19Pc9cTxbgJcGlZ1xdxvAQbWTd1oQbwgUr5YGOP2K6fUIcfHQX58sByWDSyTR4vkObuAKAK3K19eFW00" alt=""></p>
+<h3 id="important-classes-used">Important classes used</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">@startuml
+class QSGNode
+note left: base class of all scene graph
+class QSGGeometryNode {
+  QSGGeometry geometry
+  QSGMaterial meterial
+}
+note right: Base clsss for all rendered content
+class QSGClipNode
+class QSGOpacityNode
+class QSGTransformNode
+
+QSGNode &lt;-- QSGBasicGeometryNode
+QSGNode &lt;-- QSGOpacityNode
+QSGNode &lt;-- QSGRenderNode
+QSGNode &lt;-- QSGTransformNode
+QSGBasicGeometryNode &lt;-- QSGGeometryNode
+QSGBasicGeometryNode &lt;-- QSGClipNode
+
+QSGGeometryNode &lt;--- QSGImageNode
+QSGGeometryNode &lt;--- QSGRectangleNode
+QSGGeometryNode &lt;--- QSGSimpleRectNode
+note bottom: deprecated, use QSGRectangleNode
+QSGGeometryNode &lt;--- QSGSimpleTextureNode
+note bottom: deprecated, use QSGImageNode
+
+QSGGeometryNode o-- QSGGeometry
+QSGGeometryNode o-- QSGMaterial 
+QSGMaterial &lt;-- QSGFlatColorMaterial
+QSGMaterial &lt;-- QSGOpaqueTextureMaterial
+QSGMaterial &lt;-- QSGSimpleMaterial
+QSGMaterial &lt;-- QSGVertexColorMaterial
+@enduml
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="http://www.plantuml.com/plantuml/svg/bPBDRi8m48JlUOfzWF82g0TKfA8Usgg0Ub-SIOZadtIzaK1Ltxq4WqnQIDMRC_Dvn-Euc4LbqSxPmbYEaTvMYvTGel11GHQLJcd34PJSK15RIz70WshXTfktBH0SLFRzTleiw5AZ-hH8yZChf65B3cbHVAL0QUhj8V4X9SOOgGfoZ1Ju4eAIJF0AhpbtRfkspypAQykcqVrGN0lxM0LnHxauzQJxoQHt3ucDkMmm0FBCQzRoUBHhpZ3pTqmcipOEvhOzzGD8n9FZ6hroarZ2AFlQZbEhnhKMFPiVn2Qe1ZUb4gt0iAAyeoxYlqFNs6ad-7DkhdErSHZUtGq_lxRYukDydu-MTHviaBCnWFBF_-ZEfnu3KxqnuXsYs0qJP_1bv-mt" alt=""></p>
+<h3 id="how-to-add-custom-node-to-scene-graph">How to add custom node to scene graph</h3>
+<ol>
+<li>Create a custom class subclassing <code>QQuickItem</code></li>
+<li>Set flag with <code>setFlag(ItemHasContents)</code></li>
+<li>Override <code>QQuickItem::updatePaintNode()</code>, use <code>QSGNode::*ChildNode()</code></li>
+</ol>
+<h2 id="frame-graph">Frame graph</h2>
+<h2 id="3d">3D</h2>
+<h2 id="multi-threads">Multi-threads</h2>
+<p>QML/Js engine is single thread?
+<a href="https://doc.qt.io/qt-5/qml-qtqml-workerscript.html">WorkerScript</a></p>
+<h2 id="internals">Internals</h2>
+<p>QQuickItem(c++) Item(QML)
+QQmlEngine
+QQmlComponent
+<a href="https://doc.qt.io/qt-5/qqmlcontext.html#details">QQmlContext</a>
+Expose C++ OBject to to QML.</p>
+<p>iterate qml in c++</p>
+<h2 id="question-to-be-answered">Question to be answered</h2>
+<ol>
+<li>A c++ type registerd to QML engine can not be created in c++ code?(video_hub code)</li>
+<li>How to know width and height of ListView?</li>
+</ol>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://doc-snapshots.qt.io/qt5-dev/qtquick-index.html#">Qt Quick</a></li>
+<li><a href="https://doc.qt.io/qt-5/qtquickcontrols-index.html">Qt Quick Controls</a></li>
+<li><a href="https://doc.qt.io/qt-5/qtqml-documents-scope.html">Scope and name resolution</a></li>
+<li><a href="https://doc-snapshots.qt.io/qt5-dev/qtqml-qmlmodule.html">Qt QML base type</a></li>
+<li><a href="https://doc.qt.io/qt-5/qtquick-usecase-layouts.html">Use Case - Positioners and Layouts In QML</a></li>
+<li><a href="https://doc.qt.io/qt-5/qtquick-positioning-topic.html">Important Concepts In Qt Quick - Positioning</a></li>
+<li><a href="https://doc-snapshots.qt.io/qt5-dev/qtquick-modelviewsdata-modelview.html">Models and Views in Qt Quick</a></li>
+<li><a href="https://doc.qt.io/qt-5/model-view-programming.html">Model View Programming</a></li>
+<li><a href="https://doc.qt.io/qt-5/qtquick-visualcanvas-scenegraph.html">Scene Graph</a></li>
+<li><a href="https://doc.qt.io/qt-5/qtquick-scenegraph-customgeometry-example.html">Scene Grapth Custom geometry</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">tonghao</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-11-14
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/qml/">QML</a>
+          <a href="/tags/qt/">Qt</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/memory-leak-check-on-windows/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Memory leak check on windows</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:yuantonghao@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5829527/maidamai" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://github.com/maidamai0" class="iconfont icon-github" title="github"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>tonghao</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
