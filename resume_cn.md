@@ -1,4 +1,4 @@
-# [袁同浩](mailto:michael.fay.live.com)
+# [袁同浩](mailto:michael.fay@live.com)
 
 软件工程师. 目前我已有超过5年的 C++工作经验，其中 Windows 平台三年多, Linux 平台一年多，平日里我自己也使用 Linux，此外平时也会使用 python 写一些简单的脚本提高工作效率，比如生成一些简单的C++代码.我熟悉并且喜爱现代 C++，日常开发均使用 C++17, 有独立开发完整应用程序经验。您可以浏览我的 [GitHub](https://github.com/maidamai0) 以便了解我的兴趣以及代码风格。
 
