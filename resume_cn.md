@@ -1,6 +1,6 @@
 # 袁同浩
 
-15221103487  |  [yuantonghao@gmail.com](mailto:yuantonghao@gmail.com)
+15221103487  |  [yuantonghao@gmail.com](mailto:yuantonghao@gmail.com) | [GitHub](https://github.com/maidamai0)
 
 软件工程师，熟悉C++，CUDA和Python，了解X86汇编，日常工作使用的工具如下：
 
@@ -30,6 +30,8 @@
 * 并发编程，熟悉C++标准库线程，各种锁，原子操作，了解内存模型，cache一致性原理以及相关硬件实现，了解X86汇编以及SIMD，熟悉CUDA编程
 * 性能优化，会使用perf，Nsight Compute工具分析性能，定位性能瓶颈
 * 英文，无障碍阅读英文技术书籍和文档，日常科学上网
+
+[Qt/QML](https://github.com/maidamai0/QuickUIKit) | [QML](https://github.com/maidamai0/QtQuickDemo) | [光栅化](https://github.com/maidamai0/tinyrender) | [GLRender]((https://github.com/maidamai0/GLRender)) | [光追](https://github.com/maidamai0/ray_tracing_in_one_weekend) | [bvh](https://github.com/maidamai0/bvh)
 
 ## 个人特点
 
