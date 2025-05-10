@@ -22,7 +22,18 @@
 * 2019.3 ~ 2022.4 [carestream dental](https://www.carestreamdental.com/en-us) 使用C++进行医学影像软件开发，用到Qt, [VTK](https://vtk.org/),OpenGL
 * 2022.4 ~ 至今 [联影智能](https://www.uii-ai.com/) 医学图像处理和渲染，三维网格以及三维图像算法和应用后端
 
-## 掌握技能
+## 项目经历
+
+* 继电保护产品开发，主要涉及到ip/tcp协议以及部份电力系统专用协议解析处理和Qt图像界面编程，全国变电站具有使用
+* 视频图像数据库开发，配合公安部开发大数据监控系统，主要是REST风格网络编程，底层封装了 kafka， elastic search，部份省市公安部，交通部使用
+* 口扫桌面软件开发，使用Qt/QML开发牙科口3D内扫描仪桌面软件，国内外牙科诊所均匀使用
+* 牙科阅片软件开发，使用wxWidgets开发牙科综合阅片软件，核心功能为DICOM图像传输和处理，当时主要用于欧美和日本市场
+* 医学图像渲染算法开发，基于CT/MR扫描出的3D图像和分割结果，研发多平面重建，曲面重建，拉直曲面重建，探针图像，以及体绘制和面绘制等算法，国内上千家大小医院部署
+* 三维网格算法开发，开发三维图像和三维网格相互转化算法，三维网格和平面切割算法，bvh等空间划分结构等
+* 公司基础库维护，维护多个公司内部基础库，比如多线程任务，dicom文件读写，2d/3d 图像处理等
+* 渲染服务后端开发，基于自研的渲染算法，使用python搭建基于websocket协议的渲染服务ß
+
+## 技术栈
 
 * 网络编程，了解TCP/IP协议和Linux socket接口，使用过[asio](https://think-async.com/Asio/)库，实现过 websocket 协议，熟悉Python异步框架[asyncio](https://docs.python.org/3/library/asyncio.html)
 * 界面编程，三年Qt/QML产品开发经验，使用[Dear ImGui](https://github.com/ocornut/imgui)编写过工具软件
